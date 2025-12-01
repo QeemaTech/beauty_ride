@@ -49,7 +49,7 @@ class CustomTextFormField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 44.h,
+      height: 50.h,
       child: TextFormField(
         minLines: minLines,
         maxLines: maxLines,
@@ -69,8 +69,8 @@ class CustomTextFormField extends StatelessWidget {
         onChanged: onChanged,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(
-            right: 12.w,
-            left: 12.w,
+            right: 16.w,
+            left: 16.w,
             top: 10.h,
             bottom: 10.h,
           ),
@@ -83,21 +83,21 @@ class CustomTextFormField extends StatelessWidget {
               ),
           suffixIcon: IconButton(
             onPressed: suffixIconOnTap,
-            icon: Icon(suffixIcon, color: Colors.black),
+            icon: Icon(suffixIcon, color: Colors.grey),
           ),
           border: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: Color(0xff394760)),
+            borderRadius: BorderRadius.circular(25.r),
+            borderSide: BorderSide(color: Color(0xffEDEDED)),
           ),
           enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: Color(0xff394760)),
+            borderRadius: BorderRadius.circular(25.r),
+            borderSide: BorderSide(color: Color(0xffEDEDED)),
           ),
           focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(8.r),
-            borderSide: BorderSide(color: Color(0xff394760)),
+            borderRadius: BorderRadius.circular(25.r),
+            borderSide: BorderSide(color: Color(0xffEDEDED)),
           ),
-          fillColor: Color(0xff263040),
+          fillColor: Color(0xffFFFFFF),
           filled: true,
           hintText: hintText,
           labelText: labelText,

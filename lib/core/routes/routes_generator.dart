@@ -1,4 +1,8 @@
 import 'package:beauty_ride/core/routes/routes.dart';
+import 'package:beauty_ride/features/auth/presentation/pages/login_screen.dart';
+import 'package:beauty_ride/features/auth/presentation/pages/sign_up_screen.dart';
+import 'package:beauty_ride/features/dashboard/screens/dashboard_screen.dart';
+import 'package:beauty_ride/features/on_boarding/pages/on_boarding_screen.dart';
 import 'package:beauty_ride/features/splash/presentation/pages/splash_onboard.dart';
 import 'package:beauty_ride/features/splash/presentation/pages/splash_screen.dart';
 import 'package:flutter/cupertino.dart';
@@ -16,6 +20,14 @@ class RoutesGenerator {
         return _buildRoute(const SplashScreen(), isIos);
       case Routes.splashOnbording:
         return _buildRoute(const SplashOnboard(), isIos);
+      case Routes.onboard:
+        return _buildRoute(const OnBoardingScreen(), isIos);
+      case Routes.login:
+        return _buildRoute(const LoginScreen(), isIos);
+      case Routes.signUp:
+        return _buildRoute(const SignUpScreen(), isIos);
+      case Routes.dashboard:
+        return _buildRoute(DashboardScreen(), isIos);
 
       default:
         return _buildRoute(_undefinedWidget(), isIos);

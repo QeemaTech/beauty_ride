@@ -8,3 +8,11 @@ abstract class SplashState extends Equatable {
 }
 
 class SplashInitial extends SplashState {}
+
+class ChangeIndex extends SplashState {
+  final int index;
+
+  const ChangeIndex({required this.index});
+  @override
+  List<Object> get props => [index];
+}

@@ -44,7 +44,7 @@ class CustomAppbar extends StatelessWidget {
                         vertical: 13.h,
                       ),
                       child: SvgPicture.asset(
-                        IconsResources.arrowLeft,
+                        IconsResources.apple,
                         height: 20,
                         width: 20,
                       ),
@@ -93,7 +93,7 @@ class CustomAppbar extends StatelessWidget {
                         vertical: 12.h,
                       ),
                       child: SvgPicture.asset(
-                        IconsResources.arrowLeft,
+                        IconsResources.apple,
                         height: 20,
                         width: 20,
                       ),

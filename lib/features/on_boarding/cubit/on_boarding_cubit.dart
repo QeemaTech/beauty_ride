@@ -1,4 +1,5 @@
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
+import 'package:beauty_ride/shared/resources/images_resources.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
@@ -18,41 +19,40 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
   }
 
   void nextPage() {
-    currentIndex++;
     if (currentIndex < onBoardings.length - 1) {}
+    currentIndex++;
     controller.animateToPage(
       currentIndex,
       duration: Duration(milliseconds: 500),
       curve: Curves.easeInOut,
     );
-    //controller.jumpToPage(currentIndex);
-    emit(ChangeIndex(currentIndex));
+    emit(ChangePage(currentIndex));
   }
 
   List<OnBoardModel> onBoardings = [
     OnBoardModel(
       id: 1,
-      nameApp: "AGORA",
-      title: "Everything You Need, in One Place",
-      subTitle:
-          "Find experts, rent equipment, and shop trusted stores all in one powerful platform",
-      image: IconsResources.maskGroup,
+      title: "جمالك يبدأ من راحتك",
+      subTitle: "كل خدمات التجميل اللي بتحبيها توصلك لحد باب بيتك...",
+      image: ImagesResources.bg,
     ),
     OnBoardModel(
       id: 2,
-      nameApp: "AGORA",
-      title: "Everything You Need, in One Place",
-      subTitle:
-          "Find experts, rent equipment, and shop trusted stores all in one powerful platform",
-      image: IconsResources.maskGroup,
+      title: "إنتِ اللي بتحددي السعر",
+      subTitle: "حددي السعر اللي يناسبك، واستني عروض الكوافيرين القريبين منك",
+      image: ImagesResources.bg1,
     ),
     OnBoardModel(
       id: 2,
-      nameApp: "AGORA",
-      title: "Everything You Need, in One Place",
-      subTitle:
-          "Find experts, rent equipment, and shop trusted stores all in one powerful platform",
-      image: IconsResources.maskGroup,
+      title: " كوافيرك في الطريق إليك",
+      subTitle: "تتبعي طلبك لحظة بلحظة، واستمتعي بخدمة احترافية في بيتك",
+      image: ImagesResources.bg,
+    ),
+    OnBoardModel(
+      id: 2,
+      title: " كوافيرك في الطريق إليك",
+      subTitle: "تتبعي طلبك لحظة بلحظة، واستمتعي بخدمة احترافية في بيتك",
+      image: ImagesResources.bg3,
     ),
   ];
 }

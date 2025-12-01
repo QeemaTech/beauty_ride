@@ -6,7 +6,7 @@ import 'package:svg_flutter/svg_flutter.dart';
 class PrimaryButton extends StatelessWidget {
   const PrimaryButton({
     super.key,
-     this.title='',
+    this.title = '',
     this.onPressed,
     this.style,
     this.isIcon,
@@ -28,26 +28,27 @@ class PrimaryButton extends StatelessWidget {
     return GestureDetector(
       onTap: onPressed,
       child: Container(
-        height: 48.h,
+        //height: 54.h,
         alignment: Alignment.center,
         width: 350.w,
-        padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 6.h),
+        padding: EdgeInsets.symmetric(horizontal: 32.w, vertical: 16.h),
         decoration: BoxDecoration(
-          color: color,
-          borderRadius: BorderRadius.circular(8.r),
-          gradient: color != null
-              ? null
-              : LinearGradient(colors: [Color(0xff2F9D8C), Color(0xff42A150)]),
+          color: color ?? Color(0xffE4C6C6),
+          border: color != null ? Border.all(color: Color(0xffE4C6C6)) : null,
+          borderRadius: BorderRadius.circular(50.r),
+          // gradient: color != null
+          //     ? null
+          //     : LinearGradient(colors: [Color(0xff2F9D8C), Color(0xff42A150)]),
         ),
         child: isIcon != null && isIcon == true
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                spacing: 8.w,
+                spacing: 32.w,
                 children: [
-                  SvgPicture.asset(icon, height: 20.h, width: 20.w),
+                  SvgPicture.asset(icon, height: 24.h, width: 24.w),
                   Text(
                     title,
-                    style: AppTextStyle.textStyle(
+                    style:style?? AppTextStyle.textStyle(
                       appFontSize: 14.sp,
                       appFontWeight: FontWeight.w700,
                       color: Color(0xffEFF1F5),
@@ -59,9 +60,9 @@ class PrimaryButton extends StatelessWidget {
                   Text(
                     title,
                     style: AppTextStyle.textStyle(
-                      appFontSize: 14.sp,
-                      appFontWeight: FontWeight.w700,
-                      color: Color(0xffEFF1F5),
+                      appFontSize: 18.sp,
+                      appFontWeight: FontWeight.w400,
+                      color: Color(0xff683131),
                     ),
                   ),
       ),

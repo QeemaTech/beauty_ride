@@ -1,14 +1,16 @@
 import 'package:beauty_ride/core/routes/routes.dart';
 import 'package:beauty_ride/features/on_boarding/cubit/on_boarding_cubit.dart';
+import 'package:beauty_ride/shared/classes/text_style.dart';
 import 'package:beauty_ride/shared/extentions/navigations.dart';
-import 'package:beauty_ride/shared/resources/icons_resources.dart';
+import 'package:beauty_ride/shared/widgets/custom_body_app.dart';
+import 'package:beauty_ride/shared/widgets/give_space.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:svg_flutter/svg.dart';
+import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import '../../../shared/widgets/primary_button.dart';
-import '../widgets/custom_appbar.dart';
 
 class OnBoardingScreen extends StatelessWidget {
   const OnBoardingScreen({super.key});
@@ -18,10 +20,6 @@ class OnBoardingScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => OnBoardingCubit(),
       child: Scaffold(
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50),
-          child: CustomAppbar(isBack: false),
-        ),
         body: BlocBuilder<OnBoardingCubit, OnBoardingState>(
           builder: (context, state) {
             final cubit = context.read<OnBoardingCubit>();
@@ -34,77 +32,108 @@ class OnBoardingScreen extends StatelessWidget {
               itemCount: cubit.onBoardings.length,
               itemBuilder: (_, index) {
                 final onBoard = cubit.onBoardings[index];
-                return Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 20),
-                  child: Column(
-                    children: [
-                      SizedBox(height: 80),
-                      // TextStyleApp(
-                      //   textAlign: TextAlign.center,
-                      //   text: onBoard.nameApp,
-                      //   fontSize: 59,
-                      //   fontWeight: FontWeight.w400,
-                      //   color: Color(0xff2F9D8C),
-                      // ),
-                      // SizedBox(height: 48),
-                      // TextStyleApp(
-                      //   text: onBoard.title,
-                      //   fontSize: 18,
-                      //   fontWeight: FontWeight.bold,
-                      //   color: Color(0xffEFF1F5),
-                      // ),
-                      // SizedBox(height: 16),
-                      // TextStyleApp(
-                      //   textAlign: TextAlign.center,
-                      //   text: onBoard.subTitle,
-                      //   fontSize: 18,
-                      //   fontWeight: FontWeight.bold,
-                      //   color: Color(0xffEFF1F5),
-                      // ),
-                      Spacer(),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          SvgPicture.asset(
-                            onBoard.image,
-                            height: 20,
-                            width: 24,
+                return Container(
+                  alignment: Alignment.bottomCenter,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                      image: AssetImage(onBoard.image),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: CustomBodyApp(
+                    child: Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: [
+                        Text(
+                          textAlign: TextAlign.center,
+                          cubit.onBoardings[index].title,
+                          style: AppTextStyle.textStyle(
+                            appFontSize: 24,
+                            appFontWeight: FontWeight.w400,
+                            color: Color(0xffFFFFFF),
                           ),
-                          index == 2
-                              ? PrimaryButton(
-                                  title: "Get Started",
-                                  onPressed: () {
-                                    context.pushReplacementNamed(Routes.login);
-                                  },
-                                )
-                              : GestureDetector(
-                                  onTap: () {
-                                    cubit.nextPage();
-                                  },
-                                  child: Container(
-                                    height: 48,
-                                    width: 48,
-                                    alignment: Alignment.center,
-                                    decoration: BoxDecoration(
-                                      shape: BoxShape.circle,
-                                      gradient: LinearGradient(
-                                        colors: [
-                                          Color(0xff2F9D8C),
-                                          Color(0xff42A150),
-                                        ],
-                                      ),
-                                    ),
-                                    child: SvgPicture.asset(
-                                      IconsResources.arrowRight,
-                                      height: 24,
-                                      width: 24,
+                        ),
+                        GiveSpace(height: 9),
+                        Text(
+                          textAlign: TextAlign.center,
+                          cubit.onBoardings[index].subTitle,
+                          style: AppTextStyle.textStyle(
+                            appFontSize: 16,
+                            appFontWeight: FontWeight.w400,
+                            color: Color(0xffFFFFFF),
+                          ),
+                        ),
+                        GiveSpace(height: 32),
+                        index == 3
+                            ? Column(
+                                spacing: 16.h,
+                                children: [
+                                  PrimaryButton(
+                                    title: "مستخدم",
+                                    onPressed: () {
+                                      context.pushReplacementNamed(
+                                        Routes.login,
+                                      );
+                                    },
+                                  ),
+                                  PrimaryButton(
+                                    title: "مقدم خدمة",
+                                    onPressed: () {
+                                      context.pushReplacementNamed(
+                                        Routes.signUp,
+                                      );
+                                    },
+                                  ),
+                                  Text.rich(
+                                    TextSpan(
+                                      children: [
+                                        TextSpan(
+                                          text: "تسجيل الدخول ك",
+                                          style: AppTextStyle.textStyle(
+                                            appFontSize: 16.sp,
+                                            appFontWeight: FontWeight.w400,
+                                            color: Color(0xffFFFFFF),
+                                          ),
+                                        ),
+                                        TextSpan(
+                                          recognizer: TapGestureRecognizer()
+                                            ..onTap = () {
+                                              context.pushNamedAndRemoveUntil(
+                                                Routes.homeScreen,
+                                              );
+                                            },
+                                          text: " ضيف",
+                                          style: AppTextStyle.textStyle(
+                                            appFontSize: 16.sp,
+                                            appFontWeight: FontWeight.w400,
+                                            color: Color(0xff683131),
+                                          ),
+                                        ),
+                                      ],
                                     ),
                                   ),
-                                ),
-                        ],
-                      ),
-                      SizedBox(height: 30),
-                    ],
+                                ],
+                              )
+                            : PrimaryButton(
+                                title: "التالي",
+                                onPressed: () {
+                                  cubit.nextPage();
+                                },
+                              ),
+                        GiveSpace(height: 16),
+                        if (index != 3)
+                          SmoothPageIndicator(
+                            controller: cubit.controller, // PageController
+                            count: cubit.onBoardings.length - 1,
+                            effect: ExpandingDotsEffect(
+                              activeDotColor: Color(0xff683131),
+                              dotColor: Color(0xffF9FAFA),
+                            ), // your preferred effect
+                            onDotClicked: (index) {},
+                          ),
+                        GiveSpace(height: 50),
+                      ],
+                    ),
                   ),
                 );
               },
