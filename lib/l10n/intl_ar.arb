@@ -117,5 +117,18 @@
   "friday": "الجمعة",
   "messageSentSuccessfully": "تم إرسال الرسالة بنجاح",
   "addNewAddress": "إضافة عنوان جديد",
-  "homeScreen":"الصفحة الرئيسية"
+  "homeScreen":"الصفحة الرئيسية",
+  "accept": "موافقة",
+  "reject": "رفض",
+  "startSearch": "ابدا البحث",
+  "cancelSearch": "الغاء البحث",
+  "bookLater": "حجز في وقت لاحق",
+  "dateAndTime": "التاريخ و الوقت",
+  "date": "التاريخ",
+  "time": "الوقت",
+  "book": "حجز",
+  "onTheWay": "في الطريق",
+  "userName": "اسم المستخدم",
+  "arabic": "العربية",
+  "english": "الإنجليزية"
 }

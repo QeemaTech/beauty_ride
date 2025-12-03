@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("Accept"),
     "activate": MessageLookupByLibrary.simpleMessage("Activate"),
     "addNewAddress": MessageLookupByLibrary.simpleMessage("Add New Address"),
     "addService": MessageLookupByLibrary.simpleMessage("Add Service"),
@@ -50,8 +51,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "black": MessageLookupByLibrary.simpleMessage("Black"),
     "blonde": MessageLookupByLibrary.simpleMessage("Blonde"),
+    "book": MessageLookupByLibrary.simpleMessage("Book"),
+    "bookLater": MessageLookupByLibrary.simpleMessage("Book Later"),
     "brown": MessageLookupByLibrary.simpleMessage("Brown"),
     "burgundyRed": MessageLookupByLibrary.simpleMessage("Burgundy red"),
+    "cancelSearch": MessageLookupByLibrary.simpleMessage("Cancel Search"),
+    "card": MessageLookupByLibrary.simpleMessage("Card"),
     "cash": MessageLookupByLibrary.simpleMessage("Cash"),
     "clearAll": MessageLookupByLibrary.simpleMessage("Clear All"),
     "colorCoordination": MessageLookupByLibrary.simpleMessage(
@@ -71,6 +76,8 @@ class MessageLookup extends MessageLookupByLibrary {
       "Create New Account",
     ),
     "customerService": MessageLookupByLibrary.simpleMessage("Customer Service"),
+    "date": MessageLookupByLibrary.simpleMessage("Date"),
+    "dateAndTime": MessageLookupByLibrary.simpleMessage("Date and Time"),
     "didntReceiveCode": MessageLookupByLibrary.simpleMessage(
       "Didn\'t receive the code?",
     ),
@@ -143,6 +150,7 @@ class MessageLookup extends MessageLookupByLibrary {
       "Offer the price that suits you",
     ),
     "onNearbySalons": MessageLookupByLibrary.simpleMessage("On nearby salons"),
+    "onTheWay": MessageLookupByLibrary.simpleMessage("On the Way"),
     "or": MessageLookupByLibrary.simpleMessage("Or"),
     "otherColors": MessageLookupByLibrary.simpleMessage("Other colors"),
     "otpSentMessage": MessageLookupByLibrary.simpleMessage(
@@ -158,6 +166,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "phoneNumber": MessageLookupByLibrary.simpleMessage("Phone Number"),
     "popularSearch": MessageLookupByLibrary.simpleMessage("Popular Search"),
     "recommendedFare": MessageLookupByLibrary.simpleMessage("Recommended fare"),
+    "reject": MessageLookupByLibrary.simpleMessage("Reject"),
     "requiredServices": MessageLookupByLibrary.simpleMessage(
       "Required Services",
     ),
@@ -169,6 +178,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "savedAddresses": MessageLookupByLibrary.simpleMessage("Saved Addresses"),
     "search": MessageLookupByLibrary.simpleMessage("Search"),
+    "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "Select Payment Method",
+    ),
     "selectServices": MessageLookupByLibrary.simpleMessage("Select Services"),
     "send": MessageLookupByLibrary.simpleMessage("Send"),
     "sendMessage": MessageLookupByLibrary.simpleMessage("Send Message"),
@@ -186,10 +198,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "skinCleansing": MessageLookupByLibrary.simpleMessage("Skin Cleansing"),
     "skinTreatment": MessageLookupByLibrary.simpleMessage("Skin Treatment"),
     "spa": MessageLookupByLibrary.simpleMessage("Spa"),
+    "startSearch": MessageLookupByLibrary.simpleMessage("Start Search"),
+    "time": MessageLookupByLibrary.simpleMessage("Time"),
     "trackOrderMomentByMoment": MessageLookupByLibrary.simpleMessage(
       "Track your order moment by moment, and enjoy professional service at home",
     ),
     "user": MessageLookupByLibrary.simpleMessage("User"),
+    "userName": MessageLookupByLibrary.simpleMessage("User Name"),
     "wax": MessageLookupByLibrary.simpleMessage("Wax"),
     "whatsapp": MessageLookupByLibrary.simpleMessage("WhatsApp"),
     "workingHours": MessageLookupByLibrary.simpleMessage("Working Hours"),

@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
+    "accept": MessageLookupByLibrary.simpleMessage("موافقة"),
     "activate": MessageLookupByLibrary.simpleMessage("تفعيل"),
     "addNewAddress": MessageLookupByLibrary.simpleMessage("إضافة عنوان جديد"),
     "addService": MessageLookupByLibrary.simpleMessage("تزويد خدمة"),
@@ -50,8 +51,12 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "black": MessageLookupByLibrary.simpleMessage("أسود"),
     "blonde": MessageLookupByLibrary.simpleMessage("اشقر"),
+    "book": MessageLookupByLibrary.simpleMessage("حجز"),
+    "bookLater": MessageLookupByLibrary.simpleMessage("حجز في وقت لاحق"),
     "brown": MessageLookupByLibrary.simpleMessage("بني"),
     "burgundyRed": MessageLookupByLibrary.simpleMessage("احمر نبيتي"),
+    "cancelSearch": MessageLookupByLibrary.simpleMessage("الغاء البحث"),
+    "card": MessageLookupByLibrary.simpleMessage("بطاقة"),
     "cash": MessageLookupByLibrary.simpleMessage("كاش"),
     "clearAll": MessageLookupByLibrary.simpleMessage("مسح الكل"),
     "colorCoordination": MessageLookupByLibrary.simpleMessage("تنسيق الوان"),
@@ -67,6 +72,8 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "createNewAccount": MessageLookupByLibrary.simpleMessage("انشاء حساب جديد"),
     "customerService": MessageLookupByLibrary.simpleMessage("خدمة العملاء"),
+    "date": MessageLookupByLibrary.simpleMessage("التاريخ"),
+    "dateAndTime": MessageLookupByLibrary.simpleMessage("التاريخ و الوقت"),
     "didntReceiveCode": MessageLookupByLibrary.simpleMessage("لم تستلم الرمز؟"),
     "dontAllow": MessageLookupByLibrary.simpleMessage("عدم السماح"),
     "dontHaveAccount": MessageLookupByLibrary.simpleMessage("ليس لدي حساب؟"),
@@ -137,6 +144,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "onNearbySalons": MessageLookupByLibrary.simpleMessage(
       "علي صالونات القريبة",
     ),
+    "onTheWay": MessageLookupByLibrary.simpleMessage("في الطريق"),
     "or": MessageLookupByLibrary.simpleMessage("او"),
     "otherColors": MessageLookupByLibrary.simpleMessage("ألوان أخرى"),
     "otpSentMessage": MessageLookupByLibrary.simpleMessage(
@@ -154,6 +162,7 @@ class MessageLookup extends MessageLookupByLibrary {
     "recommendedFare": MessageLookupByLibrary.simpleMessage(
       "الأجرة الموصى بها",
     ),
+    "reject": MessageLookupByLibrary.simpleMessage("رفض"),
     "requiredServices": MessageLookupByLibrary.simpleMessage(
       "الخدمات المطلوبة",
     ),
@@ -165,6 +174,9 @@ class MessageLookup extends MessageLookupByLibrary {
     ),
     "savedAddresses": MessageLookupByLibrary.simpleMessage("العناوين المحفوظة"),
     "search": MessageLookupByLibrary.simpleMessage("بحث"),
+    "selectPaymentMethod": MessageLookupByLibrary.simpleMessage(
+      "اختر طريقة الدفع",
+    ),
     "selectServices": MessageLookupByLibrary.simpleMessage("اختر الخدمات"),
     "send": MessageLookupByLibrary.simpleMessage("إرسال"),
     "sendMessage": MessageLookupByLibrary.simpleMessage("أرسل رسالة"),
@@ -182,10 +194,13 @@ class MessageLookup extends MessageLookupByLibrary {
     "skinCleansing": MessageLookupByLibrary.simpleMessage("تنضيف بشرة"),
     "skinTreatment": MessageLookupByLibrary.simpleMessage("علاج بشرة"),
     "spa": MessageLookupByLibrary.simpleMessage("سبا"),
+    "startSearch": MessageLookupByLibrary.simpleMessage("ابدا البحث"),
+    "time": MessageLookupByLibrary.simpleMessage("الوقت"),
     "trackOrderMomentByMoment": MessageLookupByLibrary.simpleMessage(
       "تتبعي طلبك لحظة بلحظة، واستمتعي بخدمة احترافية في بيتك",
     ),
     "user": MessageLookupByLibrary.simpleMessage("مستخدم"),
+    "userName": MessageLookupByLibrary.simpleMessage("اسم المستخدم"),
     "wax": MessageLookupByLibrary.simpleMessage("واكس"),
     "whatsapp": MessageLookupByLibrary.simpleMessage("واتساب"),
     "workingHours": MessageLookupByLibrary.simpleMessage("ساعات العمل"),

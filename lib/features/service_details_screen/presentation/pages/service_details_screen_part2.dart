@@ -12,6 +12,7 @@ import 'package:beauty_ride/shared/classes/text_style.dart';
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
 import 'package:beauty_ride/shared/widgets/custom_body_app.dart';
 import 'package:beauty_ride/shared/widgets/give_space.dart';
+import 'package:beauty_ride/shared/widgets/primary_button.dart';
 import 'package:beauty_ride/shared/widgets/textformfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -95,9 +96,142 @@ class ServiceDetailsScreenPart2 extends StatelessWidget {
       create: (context) => ServiceDetailsScreenPart2Cubit(),
       child: Scaffold(
         backgroundColor: Color(0xFFF5F5F5),
-        appBar: PreferredSize(
-          preferredSize: Size.fromHeight(50.h),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(50.h),
           child: CustomAppbar(title: tr.serviceDetails),
+        ),
+        bottomNavigationBar: BottomAppBar(
+          child: Row(
+            mainAxisAlignment: .spaceBetween,
+            children: [
+              GestureDetector(
+                onTap: () {
+                  showModalBottomSheet(
+                    context: context,
+                    builder: (_) {
+                      return Container(
+                        height: 250.h,
+                        padding: EdgeInsets.symmetric(
+                          horizontal: 24.w,
+                          vertical: 24.h,
+                        ),
+                        decoration: BoxDecoration(
+                          color: Color(0xffFFFCFE),
+                          borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(32.r),
+                            topRight: Radius.circular(32.r),
+                          ),
+                        ),
+                        child: Column(
+                          mainAxisSize: .min,
+                          children: [
+                            Row(
+                              mainAxisAlignment: .spaceBetween,
+                              children: [
+                                GestureDetector(
+                                  onTap: () {
+                                    context.maybePop();
+                                  },
+                                  child: SvgPicture.asset(IconsResources.close),
+                                ),
+                                Text(
+                                  tr.bookLater,
+                                  style: AppTextStyle.textStyle(
+                                    appFontSize: 18.sp,
+                                    appFontWeight: FontWeight.w400,
+                                    color: Color(0xff8A4242),
+                                  ),
+                                ),
+                                Container(),
+                              ],
+                            ),
+                            GiveSpace(height: 16),
+                            Align(
+                              alignment: isArabic
+                                  ? Alignment.centerRight
+                                  : Alignment.centerLeft,
+                              child: Text(
+                                tr.dateAndTime,
+                                style: AppTextStyle.textStyle(
+                                  appFontSize: 18.sp,
+                                  appFontWeight: FontWeight.w400,
+                                  color: Color(0xff000000),
+                                ),
+                              ),
+                            ),
+                            GiveSpace(height: 16),
+                            Row(
+                              mainAxisAlignment: .spaceAround,
+                              children: [
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      IconsResources.calendar,
+                                      width: 20.w,
+                                      height: 20.h,
+                                    ),
+                                    GiveSpace(width: 8),
+                                    Text(
+                                      tr.date,
+                                      style: AppTextStyle.textStyle(
+                                        appFontSize: 18.sp,
+                                        appFontWeight: FontWeight.w400,
+                                        appFontHeight: 22.sp,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                                Row(
+                                  children: [
+                                    SvgPicture.asset(
+                                      IconsResources.clock,
+                                      width: 20.w,
+                                      height: 20.h,
+                                    ),
+                                    GiveSpace(width: 8),
+                                    Text(
+                                      tr.time,
+                                      style: AppTextStyle.textStyle(
+                                        appFontSize: 18.sp,
+                                        appFontWeight: FontWeight.w400,
+                                        appFontHeight: 22.sp,
+                                        color: Color(0xff000000),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
+                            GiveSpace(height: 16),
+                            PrimaryButton(title: tr.book),
+                          ],
+                        ),
+                      );
+                    },
+                  );
+                },
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 8.w, vertical: 8.h),
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: Color(0xffE4C6C6),
+                  ),
+                  alignment: Alignment.center,
+                  child: SvgPicture.asset(IconsResources.calendar),
+                ),
+              ),
+              SizedBox(
+                width: 300.w,
+                child: PrimaryButton(
+                  title: tr.next,
+                  onPressed: () {
+                    context.pushNamed(Routes.searchTruckScreen);
+                  },
+                ),
+              ),
+            ],
+          ),
         ),
         body: BlocBuilder<ServiceDetailsScreenPart2Cubit, ServiceDetailsScreenPart2State>(
           builder: (context, state) {
@@ -384,7 +518,9 @@ class ServiceDetailsScreenPart2 extends StatelessWidget {
                             ),
                           ),
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              context.pushNamed(Routes.searchTruckScreen);
+                            },
                             child: Text(
                               tr.editLocation,
                               style: AppTextStyle.textStyle(

@@ -1,5 +1,6 @@
-import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/features/dashboard/cubit/dashboard_cubit.dart';
+import 'package:beauty_ride/features/language/presentation/cubit/language_cubit.dart';
+import 'package:beauty_ride/generated/l10n.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
 import 'package:beauty_ride/shared/extentions/navigations.dart';
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
@@ -19,7 +20,11 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     ResponsiveScreen.initialize();
-    return Drawer(
+    final tr = S.of(context);
+    
+    return BlocBuilder<LanguageCubit, LanguageState>(
+      builder: (context, languageState) {
+        return Drawer(
       width: 243.w,
       shape: OutlineInputBorder(
         borderSide: BorderSide(color: ColorResources.primaryColor),
@@ -50,7 +55,7 @@ class CustomDrawer extends StatelessWidget {
                 Column(
                   children: [
                     Text(
-                      "هبه ياسر",
+                      tr.userName,
                       style: AppTextStyle.textStyle(
                         color: Color(0xff110808),
                         appFontSize: 14.sp,
@@ -85,16 +90,17 @@ class CustomDrawer extends StatelessWidget {
             BlocBuilder<DashboardCubit, DashboardState>(
               builder: (context, state) {
                 final cubit = context.read<DashboardCubit>();
+                final widgets = cubit.getWidgets(context);
                 return ListView.builder(
                   shrinkWrap: true,
-                  itemCount: cubit.widgets.length,
+                  itemCount: widgets.length,
                   itemBuilder: (context, index) {
                     return CustomRowsDrawer(
                       onTap: () {
                         cubit.selectCard(index);
                       },
-                      image: cubit.widgets[index].icon,
-                      title: cubit.widgets[index].name,
+                      image: widgets[index].icon,
+                      title: widgets[index].name,
                       color: cubit.currentIndex == index
                           ? ColorResources.whiteColor
                           : ColorResources.whiteColor.withOpacity(0.50),
@@ -146,6 +152,8 @@ class CustomDrawer extends StatelessWidget {
           ],
         ),
       ),
+    );
+      },
     );
   }
 }

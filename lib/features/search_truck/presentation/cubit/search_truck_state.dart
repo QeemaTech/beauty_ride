@@ -8,3 +8,12 @@ abstract class SearchTruckState extends Equatable {
 }
 
 class SearchTruckInitial extends SearchTruckState {}
+
+class SearchTruckLocationLoaded extends SearchTruckState {
+  final List<ServiceProviderModel> providers;
+
+  const SearchTruckLocationLoaded({this.providers = const []});
+
+  @override
+  List<Object> get props => [providers];
+}

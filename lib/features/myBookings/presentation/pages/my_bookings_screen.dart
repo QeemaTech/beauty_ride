@@ -1,3 +1,4 @@
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/shared/widgets/custom_body_app.dart';
 import 'package:flutter/material.dart';
 
@@ -10,7 +11,7 @@ class MyBookingsScreen extends StatelessWidget {
       body: CustomBodyApp(
         child: Column(
           children: [
-            Text("hello")
+            Text(tr.myBookings)
           ],
         ),
       ),

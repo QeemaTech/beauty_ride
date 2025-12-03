@@ -117,5 +117,18 @@
   "friday": "Friday",
   "messageSentSuccessfully": "Message sent successfully",
   "addNewAddress": "Add New Address",
-  "homeScreen":"Home Screen"
+  "homeScreen":"Home Screen",
+  "accept": "Accept",
+  "reject": "Reject",
+  "startSearch": "Start Search",
+  "cancelSearch": "Cancel Search",
+  "bookLater": "Book Later",
+  "dateAndTime": "Date and Time",
+  "date": "Date",
+  "time": "Time",
+  "book": "Book",
+  "onTheWay": "On the Way",
+  "userName": "User Name",
+  "arabic": "Arabic",
+  "english": "English"
 }

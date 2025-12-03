@@ -22,4 +22,5 @@ class ImagesResources {
   static const String hair1 = '$_path/hair.png';
   static const String sale = '$_path/sale.png';
   static const String bgAppbar = '$_path/bg_appbar.png';
+  static const String man = '$_path/man.png';
 }

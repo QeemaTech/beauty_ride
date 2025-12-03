@@ -1,25 +1,27 @@
-import 'package:beauty_ride/core/functions/translate.dart';
-import 'package:beauty_ride/shared/resources/icons_resources.dart';
+import 'package:beauty_ride/app/my_app.dart';
+import 'package:beauty_ride/generated/l10n.dart';
 import 'package:beauty_ride/shared/resources/images_resources.dart';
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
 import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
 import '../model/on_board_model.dart';
 
 part 'on_boarding_state.dart';
 
 class OnBoardingCubit extends Cubit<OnBoardingState> {
-  OnBoardingCubit() : super(OnBoardingInitial()) {
-    loadOnBoardings();
-  }
+  OnBoardingCubit() : super(OnBoardingInitial());
   PageController controller = PageController();
   int currentIndex = 0;
   
-  List<OnBoardModel> onBoardings = [];
-
-  void loadOnBoardings() {
-    onBoardings = [
+  // Convert to getter that depends on current language
+  List<OnBoardModel> getOnBoardings(BuildContext? context) {
+    final tr = context != null 
+        ? S.of(context) 
+        : S.of(navigatorKey.currentContext ?? navigatorKey.currentState!.context);
+    
+    return [
       OnBoardModel(
         id: 1,
         title: tr.beautyStartsFromComfort,
@@ -52,14 +54,15 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
     emit(ChangePage(currentIndex));
   }
 
-  void nextPage() {
-    if (currentIndex < onBoardings.length - 1) {}
-    currentIndex++;
-    controller.animateToPage(
-      currentIndex,
-      duration: Duration(milliseconds: 500),
-      curve: Curves.easeInOut,
-    );
-    emit(ChangePage(currentIndex));
+  void nextPage(int totalPages) {
+    if (currentIndex < totalPages - 1) {
+      currentIndex++;
+      controller.animateToPage(
+        currentIndex,
+        duration: Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
+      emit(ChangePage(currentIndex));
+    }
   }
 }

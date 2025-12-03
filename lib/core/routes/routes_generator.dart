@@ -14,6 +14,7 @@ import 'package:beauty_ride/features/notifications/presentation/pages/notificati
 import 'package:beauty_ride/features/on_boarding/pages/on_boarding_screen.dart';
 import 'package:beauty_ride/features/saved_addresses/presentation/pages/savedAddresses_screen.dart';
 import 'package:beauty_ride/features/search/presentation/pages/search_screen.dart';
+import 'package:beauty_ride/features/search_truck/presentation/pages/search_truck_screen.dart';
 import 'package:beauty_ride/features/service_details_screen/presentation/pages/service_details_screen.dart';
 import 'package:beauty_ride/features/service_details_screen/presentation/pages/service_details_screen_part2.dart';
 import 'package:beauty_ride/features/service_screen/presentation/pages/service_screen.dart';
@@ -70,6 +71,8 @@ class RoutesGenerator {
         return _buildRoute(CustomerServiceScreen(), isIos);
       case Routes.notifications:
         return _buildRoute(NotificationsScreen(), isIos);
+      case Routes.searchTruckScreen:
+        return _buildRoute(SearchTruckScreen(), isIos);
 
       default:
         return _buildRoute(_undefinedWidget(), isIos);

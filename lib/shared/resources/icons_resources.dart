@@ -39,4 +39,6 @@ class IconsResources {
   static const String documentCopy = '$_path/document-copy.svg';
   static const String add = '$_path/add.svg';
   static const String edit = '$_path/edit-2.svg';
+  static const String calendar = '$_path/calendar.svg';
+  static const String clock = '$_path/clock.svg';
 }

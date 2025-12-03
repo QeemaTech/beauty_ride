@@ -24,4 +24,5 @@ class Routes {
   static const language = "/language";
   static const customerServiceScreen = "/customerServiceScreen";
   static const customServiceScreen = "/customServiceScreen";
+  static const searchTruckScreen = "/searchTruckScreen";
 }

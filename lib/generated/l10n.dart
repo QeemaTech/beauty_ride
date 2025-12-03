@@ -804,6 +804,21 @@ class S {
     return Intl.message('Cash', name: 'cash', desc: '', args: []);
   }
 
+  /// `Card`
+  String get card {
+    return Intl.message('Card', name: 'card', desc: '', args: []);
+  }
+
+  /// `Select Payment Method`
+  String get selectPaymentMethod {
+    return Intl.message(
+      'Select Payment Method',
+      name: 'selectPaymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
   /// `Enter discount code`
   String get enterDiscountCode {
     return Intl.message(
@@ -947,6 +962,76 @@ class S {
   /// `Home Screen`
   String get homeScreen {
     return Intl.message('Home Screen', name: 'homeScreen', desc: '', args: []);
+  }
+
+  /// `Accept`
+  String get accept {
+    return Intl.message('Accept', name: 'accept', desc: '', args: []);
+  }
+
+  /// `Reject`
+  String get reject {
+    return Intl.message('Reject', name: 'reject', desc: '', args: []);
+  }
+
+  /// `Start Search`
+  String get startSearch {
+    return Intl.message(
+      'Start Search',
+      name: 'startSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel Search`
+  String get cancelSearch {
+    return Intl.message(
+      'Cancel Search',
+      name: 'cancelSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Book Later`
+  String get bookLater {
+    return Intl.message('Book Later', name: 'bookLater', desc: '', args: []);
+  }
+
+  /// `Date and Time`
+  String get dateAndTime {
+    return Intl.message(
+      'Date and Time',
+      name: 'dateAndTime',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Date`
+  String get date {
+    return Intl.message('Date', name: 'date', desc: '', args: []);
+  }
+
+  /// `Time`
+  String get time {
+    return Intl.message('Time', name: 'time', desc: '', args: []);
+  }
+
+  /// `Book`
+  String get book {
+    return Intl.message('Book', name: 'book', desc: '', args: []);
+  }
+
+  /// `On the Way`
+  String get onTheWay {
+    return Intl.message('On the Way', name: 'onTheWay', desc: '', args: []);
+  }
+
+  /// `User Name`
+  String get userName {
+    return Intl.message('User Name', name: 'userName', desc: '', args: []);
   }
 }
 
