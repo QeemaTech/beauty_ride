@@ -1,3 +1,4 @@
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/core/routes/routes.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
 import 'package:beauty_ride/shared/extentions/navigations.dart';
@@ -52,7 +53,7 @@ class LocationPermissionSheet extends StatelessWidget {
 
           // const SizedBox(height: 18),
           Text(
-            'يحتاج بيوتي رايد للوصول الي موقعك',
+            tr.beautyRideNeedsLocationAccess,
             style: AppTextStyle.textStyle(
               appFontSize: 16.sp,
               appFontWeight: FontWeight.w400,
@@ -64,7 +65,7 @@ class LocationPermissionSheet extends StatelessWidget {
           GiveSpace(height: 16),
 
           // Allow Button
-          PrimaryButton(title: 'سماح الوصول للموقع', onPressed: () {
+          PrimaryButton(title: tr.allowLocationAccess, onPressed: () {
             context.pushNamedAndRemoveUntil(Routes.dashboard);
           }),
 
@@ -73,7 +74,7 @@ class LocationPermissionSheet extends StatelessWidget {
           GestureDetector(
             onTap: () => Navigator.of(context).pop(false),
             child: Text(
-              'عدم السماح',
+              tr.dontAllow,
               style: AppTextStyle.textStyle(
                 appFontSize: 14.sp,
                 appFontWeight: FontWeight.w400,

@@ -1,4 +1,5 @@
 import 'package:beauty_ride/core/functions/check_current_lang.dart';
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/core/routes/routes.dart';
 import 'package:beauty_ride/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:beauty_ride/features/auth/presentation/widgets/location_permission.dart';
@@ -42,7 +43,7 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "تسجيل الدخول",
+                        tr.login,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff8A4242),
                           appFontSize: 18.sp,
@@ -54,7 +55,7 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "سجل دخولك لبيوتي رايد",
+                        tr.signInToBeautyRide,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff666666),
                           appFontSize: 14.sp,
@@ -63,10 +64,10 @@ class LoginScreen extends StatelessWidget {
                       ),
                     ),
                     GiveSpace(height: 20),
-                    CustomTextFormField(hintText: "رقم الهاتف"),
+                    CustomTextFormField(hintText: tr.phoneNumber),
                     GiveSpace(height: 16),
                     CustomTextFormField(
-                      hintText: "كلمة السر",
+                      hintText: tr.password,
                       obscureText: cubit.value,
                       suffixIcon: cubit.value
                           ? Icons.visibility_off_outlined
@@ -82,7 +83,7 @@ class LoginScreen extends StatelessWidget {
                           ? Alignment.centerLeft
                           : Alignment.centerRight,
                       child: Text(
-                        "هل نسيت كلمة المرور؟",
+                        tr.forgotPassword,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff683131),
                           appFontSize: 12.sp,
@@ -94,7 +95,7 @@ class LoginScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.center,
                       child: Text(
-                        "او",
+                        tr.or,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff6B6B6B),
                           appFontSize: 14.sp,
@@ -107,7 +108,7 @@ class LoginScreen extends StatelessWidget {
                       isIcon: true,
                       color: Colors.transparent,
                       icon: IconsResources.apple,
-                      title: "الاستمرار باستخدام Apple ",
+                      title: tr.continueWithApple,
                       style: AppTextStyle.textStyle(
                         appFontSize: 14.sp,
                         appFontWeight: FontWeight.w400,
@@ -119,7 +120,7 @@ class LoginScreen extends StatelessWidget {
                       isIcon: true,
                       color: Colors.transparent,
                       icon: IconsResources.twitter,
-                      title: "الاستمرار باستخدام Apple ",
+                      title: tr.continueWithApple,
                       style: AppTextStyle.textStyle(
                         appFontSize: 14.sp,
                         appFontWeight: FontWeight.w400,
@@ -131,7 +132,7 @@ class LoginScreen extends StatelessWidget {
                       isIcon: true,
                       color: Colors.transparent,
                       icon: IconsResources.devicon_google,
-                      title: "الاستمرار باستخدام Apple ",
+                      title: tr.continueWithApple,
                       style: AppTextStyle.textStyle(
                         appFontSize: 14.sp,
                         appFontWeight: FontWeight.w400,
@@ -140,7 +141,7 @@ class LoginScreen extends StatelessWidget {
                     ),
                     GiveSpace(height: 20),
                     PrimaryButton(
-                      title: "سجل الدخول",
+                      title: tr.signIn,
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -155,7 +156,7 @@ class LoginScreen extends StatelessWidget {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: "ليس لدي حساب؟ ",
+                            text: tr.dontHaveAccount,
                             style: AppTextStyle.textStyle(
                               appFontSize: 16.sp,
                               appFontWeight: FontWeight.w400,
@@ -167,7 +168,7 @@ class LoginScreen extends StatelessWidget {
                               ..onTap = () {
                                 context.pushNamedAndRemoveUntil(Routes.signUp);
                               },
-                            text: "انشاء حساب",
+                            text: tr.createAccount,
                             style: AppTextStyle.textStyle(
                               appFontSize: 16.sp,
                               appFontWeight: FontWeight.w400,

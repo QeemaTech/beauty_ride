@@ -1,3 +1,4 @@
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/core/routes/routes.dart';
 import 'package:beauty_ride/features/on_boarding/cubit/on_boarding_cubit.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
@@ -69,7 +70,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 spacing: 16.h,
                                 children: [
                                   PrimaryButton(
-                                    title: "مستخدم",
+                                    title: tr.user,
                                     onPressed: () {
                                       context.pushReplacementNamed(
                                         Routes.login,
@@ -77,7 +78,7 @@ class OnBoardingScreen extends StatelessWidget {
                                     },
                                   ),
                                   PrimaryButton(
-                                    title: "مقدم خدمة",
+                                    title: tr.serviceProvider,
                                     onPressed: () {
                                       context.pushReplacementNamed(
                                         Routes.signUp,
@@ -88,7 +89,7 @@ class OnBoardingScreen extends StatelessWidget {
                                     TextSpan(
                                       children: [
                                         TextSpan(
-                                          text: "تسجيل الدخول ك",
+                                          text: tr.signInAs,
                                           style: AppTextStyle.textStyle(
                                             appFontSize: 16.sp,
                                             appFontWeight: FontWeight.w400,
@@ -99,10 +100,10 @@ class OnBoardingScreen extends StatelessWidget {
                                           recognizer: TapGestureRecognizer()
                                             ..onTap = () {
                                               context.pushNamedAndRemoveUntil(
-                                                Routes.homeScreen,
+                                                Routes.dashboard,
                                               );
                                             },
-                                          text: " ضيف",
+                                          text: tr.guest,
                                           style: AppTextStyle.textStyle(
                                             appFontSize: 16.sp,
                                             appFontWeight: FontWeight.w400,
@@ -115,7 +116,7 @@ class OnBoardingScreen extends StatelessWidget {
                                 ],
                               )
                             : PrimaryButton(
-                                title: "التالي",
+                                title: tr.next,
                                 onPressed: () {
                                   cubit.nextPage();
                                 },

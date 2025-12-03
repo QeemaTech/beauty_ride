@@ -2,7 +2,6 @@ import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
-import 'package:beauty_ride/generated/l10n.dart';
 
 class HomeBannerWidget extends StatelessWidget {
   const HomeBannerWidget({
@@ -14,7 +13,6 @@ class HomeBannerWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final s = S.of(context);
     return Container(
       width: double.infinity,
       height: 180.h,
@@ -92,4 +90,5 @@ class HomeBannerWidget extends StatelessWidget {
     );
   }
 }
+
 

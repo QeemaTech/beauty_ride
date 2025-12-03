@@ -69,16 +69,16 @@ class CustomAppbar extends StatelessWidget {
                     ),
                   ),
                 ),
-             // if (isNotification == true) NotificationIcon(),
+              // if (isNotification == true) NotificationIcon(),
             ],
           )
         : AppBar(
             title: Text(
               title,
               style: AppTextStyle.textStyle(
-                appFontSize: 16.sp,
-                appFontWeight: FontWeight.w700,
-                color: Color(0xffDFE4EC),
+                appFontSize: 18.sp,
+                appFontWeight: FontWeight.w400,
+                color: Color(0xff8A4242),
               ),
             ),
             //leadingWidth: 50.w,

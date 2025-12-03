@@ -1,5 +1,7 @@
 import 'package:beauty_ride/core/routes/routes_generator.dart';
 import 'package:beauty_ride/core/theme/theme_app.dart';
+import 'package:beauty_ride/features/dashboard/cubit/dashboard_cubit.dart';
+import 'package:beauty_ride/features/dashboard/screens/dashboard_screen.dart';
 import 'package:beauty_ride/features/splash/presentation/pages/splash_screen.dart';
 import 'package:beauty_ride/generated/l10n.dart';
 import 'package:beauty_ride/shared/cubits/theme/theme_app_cubit.dart';
@@ -21,8 +23,11 @@ class MyApp extends StatelessWidget {
       minTextAdapt: true,
       splitScreenMode: true,
       builder: (context, child) {
-        return BlocProvider(
-          create: (context) => ThemeAppCubit(),
+        return MultiBlocProvider(
+           providers: [
+            BlocProvider(create: (context)=>ThemeAppCubit()),
+            BlocProvider(create: (context)=>DashboardCubit()),
+           ],
           child: BlocBuilder<ThemeAppCubit, ThemeAppState>(
             builder: (context, state) {
               return MaterialApp(
@@ -45,7 +50,7 @@ class MyApp extends StatelessWidget {
           ),
         );
       },
-      child: SplashScreen(),
+      child: DashboardScreen(),
     );
   }
 }

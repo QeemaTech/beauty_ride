@@ -18,10 +18,10 @@ class DashboardCubit extends Cubit<DashboardState> {
   void selectCard(int index) {
     currentIndex = index;
     emit(SelectCard(index: currentIndex));
-   // emit(ChangeColor());
   }
 
   List<ScreenModel> widgets = [
+    ScreenModel(id: 1, name: tr.homeScreen, icon: IconsResources.add),
     ScreenModel(id: 1, name: tr.personalInformation, icon: IconsResources.user),
     ScreenModel(id: 1, name: tr.myBookings, icon: IconsResources.taskSquare),
     ScreenModel(

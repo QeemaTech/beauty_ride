@@ -14,6 +14,8 @@ class IconsResources {
   static const String logout = '$_path/logout.svg';
   static const String notification = '$_path/notification.svg';
   static const String location2 = '$_path/location2.svg';
+  static const String arrowRight = '$_path/arrow_right.svg';
+  static const String search = '$_path/search-normal.svg';
 
   static const String user = '$_path/user.svg';
   static const String menu = '$_path/menu.svg';
@@ -25,4 +27,16 @@ class IconsResources {
   static const String location = '$_path/location.svg';
   static const String taskSquare = '$_path/task-square.svg';
   static const String arrowLeft = '$_path/arrow-left.svg';
+
+  static const String waks = '$_path/waks.svg';
+  static const String sapa = '$_path/sapa.svg';
+  static const String mikup = '$_path/mikup.svg';
+  static const String massage = '$_path/massage.svg';
+  static const String mankir = '$_path/mankir.svg';
+  static const String cutHair = '$_path/cut_hair.svg';
+  static const String clourHair = '$_path/clour_hair.svg';
+  static const String face = '$_path/face.svg';
+  static const String documentCopy = '$_path/document-copy.svg';
+  static const String add = '$_path/add.svg';
+  static const String edit = '$_path/edit-2.svg';
 }

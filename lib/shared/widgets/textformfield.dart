@@ -23,6 +23,7 @@ class CustomTextFormField extends StatelessWidget {
   final TextStyle? hintStyle;
   final int? maxLines;
   final int? minLines;
+  final bool isBorder;
 
   const CustomTextFormField({
     super.key,
@@ -44,12 +45,13 @@ class CustomTextFormField extends StatelessWidget {
     this.hintStyle,
     this.maxLines = 1,
     this.minLines,
+    this.isBorder = false,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 50.h,
+      height: 40.h,
       child: TextFormField(
         minLines: minLines,
         maxLines: maxLines,
@@ -69,8 +71,8 @@ class CustomTextFormField extends StatelessWidget {
         onChanged: onChanged,
         decoration: InputDecoration(
           contentPadding: EdgeInsets.only(
-            right: 16.w,
-            left: 16.w,
+            right: 10.w,
+            left: 10.w,
             top: 10.h,
             bottom: 10.h,
           ),
@@ -78,8 +80,8 @@ class CustomTextFormField extends StatelessWidget {
               hintStyle ??
               AppTextStyle.textStyle(
                 appFontSize: 14.sp,
-                appFontWeight: FontWeight.w500,
-                color: Color(0xff8092B3),
+                appFontWeight: FontWeight.w400,
+                color: Color(0xff999999),
               ),
           suffixIcon: IconButton(
             onPressed: suffixIconOnTap,
@@ -87,15 +89,24 @@ class CustomTextFormField extends StatelessWidget {
           ),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.r),
-            borderSide: BorderSide(color: Color(0xffEDEDED)),
+            borderSide: BorderSide(
+              color: isBorder ? Color(0xff8A4242) : Colors.transparent,
+              width: 1,
+            ),
           ),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.r),
-            borderSide: BorderSide(color: Color(0xffEDEDED)),
+            borderSide: BorderSide(
+              color: isBorder ? Color(0xff8A4242) : Colors.transparent,
+              width: 1,
+            ),
           ),
           focusedBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(25.r),
-            borderSide: BorderSide(color: Color(0xffEDEDED)),
+            borderSide: BorderSide(
+              color: isBorder ? Color(0xff8A4242) : Colors.transparent,
+              width: 1,
+            ),
           ),
           fillColor: Color(0xffFFFFFF),
           filled: true,

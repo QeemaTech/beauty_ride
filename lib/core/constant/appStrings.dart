@@ -1,5 +1,5 @@
 class AppStrings {
-  static const fontFamily = "Montserrat";
+  static const fontFamily = "MadaniArabic";
   static const mPLUS1 = "MPLUS1";
   static const alexandria = "Alexandria";
   static const String english = "English";

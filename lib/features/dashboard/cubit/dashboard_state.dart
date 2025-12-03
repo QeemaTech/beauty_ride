@@ -5,15 +5,9 @@ sealed class DashboardState extends Equatable {}
 
 final class DashboardInitial extends DashboardState {
   @override
-  // TODO: implement props
-  List<Object?> get props => throw UnimplementedError();
+  @override
+  List<Object> get props => [];
 }
-
-// final class ChangeColor extends DashboardState {
-//   @override
-//   // TODO: implement props
-//   List<Object?> get props => throw UnimplementedError();
-// }
 
 final class SelectCard extends DashboardState {
   final int index;
@@ -21,6 +15,5 @@ final class SelectCard extends DashboardState {
   SelectCard({required this.index});
 
   @override
-  // TODO: implement props
-  List<Object?> get props => [index];
+  List<Object> get props => [index];
 }

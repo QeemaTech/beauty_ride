@@ -72,6 +72,11 @@ dependencies:
   firebase_messaging: null
   smooth_page_indicator: ^1.2.1
   pin_code_fields: ^8.0.1
+  # location
+  location: ^5.0.0
+  geolocator: ^13.0.1
+  google_maps_flutter: ^2.9.0
+  geocoding: ^3.0.0
   flutter_localizations:
     sdk: flutter
 
@@ -116,10 +121,11 @@ flutter:
   # "family" key with the font family name, and a "fonts" key with a
   # list giving the asset and other descriptors for the font. For
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: MadaniArabic
+      fonts:
+        - asset: assets/fonts/MadaniArabicDEMO-Regular-BF671c602c48313.otf
+        - asset: assets/fonts/MadaniArabicDEMO-Bold-BF671c6031a9077.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

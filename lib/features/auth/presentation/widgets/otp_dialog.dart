@@ -1,3 +1,4 @@
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/features/auth/presentation/widgets/location_permission.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
 import 'package:beauty_ride/shared/extentions/navigations.dart';
@@ -51,7 +52,7 @@ class OtpDialog extends StatelessWidget {
 
           // Subtitle
           Text(
-            "لقد أرسلنا رمزاً مكوناً من 6 أرقام إلى رقم هاتفك +965••••1234",
+            tr.otpSentMessage,
             textAlign: TextAlign.center,
             style: AppTextStyle.textStyle(
               appFontSize: 14.sp,
@@ -95,7 +96,7 @@ class OtpDialog extends StatelessWidget {
             TextSpan(
               children: [
                 TextSpan(
-                  text: "لم تستلم الرمز؟ ",
+                  text: tr.didntReceiveCode,
                   style: AppTextStyle.textStyle(
                     appFontSize: 14.sp,
                     appFontWeight: FontWeight.w400,
@@ -107,7 +108,7 @@ class OtpDialog extends StatelessWidget {
                     ..onTap = () {
                       // context.pushNamedAndRemoveUntil(Routes.login);
                     },
-                  text: "أعد الإرسال خلال 30 ثانية",
+                  text: tr.resendIn30Seconds,
                   style: AppTextStyle.textStyle(
                     appFontSize: 14.sp,
                     appFontWeight: FontWeight.w400,
@@ -121,7 +122,7 @@ class OtpDialog extends StatelessWidget {
           GiveSpace(height: 16),
           // Confirm Button
           PrimaryButton(
-            title: "تأكيد",
+            title: tr.confirm,
             onPressed: () {
               context.push(LocationPermissionSheet());
             },

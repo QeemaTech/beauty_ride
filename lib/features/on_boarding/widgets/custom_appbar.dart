@@ -23,12 +23,13 @@ class CustomAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      centerTitle: true,
       title: Text(
         title,
         style: AppTextStyle.textStyle(
-          appFontSize: 16.sp,
-          appFontWeight: FontWeight.w700,
-          color: Color(0xffDFE4EC),
+          appFontSize: 18.sp,
+          appFontWeight: FontWeight.w400,
+          color: Color(0xff8A4242),
         ),
       ),
       leading: isBack
@@ -39,7 +40,7 @@ class CustomAppbar extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
                 child: SvgPicture.asset(
-                  IconsResources.arrowLeft,
+                  IconsResources.arrowRight,
                   height: 20,
                   width: 20,
                 ),

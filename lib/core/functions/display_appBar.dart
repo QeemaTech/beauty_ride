@@ -1,6 +1,10 @@
+import 'package:beauty_ride/app/my_app.dart';
 import 'package:beauty_ride/core/functions/check_current_lang.dart';
 import 'package:beauty_ride/core/functions/translate.dart';
+import 'package:beauty_ride/core/routes/routes.dart';
+import 'package:beauty_ride/features/on_boarding/widgets/custom_appbar.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
+import 'package:beauty_ride/shared/extentions/navigations.dart';
 import 'package:beauty_ride/shared/resources/color_resources.dart';
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
 import 'package:beauty_ride/shared/resources/images_resources.dart';
@@ -14,59 +18,81 @@ import 'package:svg_flutter/svg.dart';
 displayAppBar(int index, Widget leading) {
   switch (index) {
     case 0:
-      return PreferredSize(
-        preferredSize: Size.fromHeight(300.h),
-        child: AppBar(
-         // toolbarHeight: 120,
-          leading: leading,
-          title: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Row(
-                spacing: 4.w,
+      return AppBar(
+        // toolbarHeight: 120,
+        leading: leading,
+        toolbarHeight: 180.h,
+        flexibleSpace: FlexibleSpaceBar(
+          background: Image.asset(
+            ImagesResources.bgAppbar,
+            width: double.infinity,
+            height: 100.h,
+          ),
+        ),
+        title: Row(
+          children: [
+            Flexible(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                mainAxisSize: MainAxisSize.min,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  SvgPicture.asset(
-                    IconsResources.location2,
-                    width: 20.w,
-                    height: 20.h,
+                  Row(
+                    spacing: 4.w,
+                    children: [
+                      SvgPicture.asset(
+                        IconsResources.location2,
+                        width: 20.w,
+                        height: 20.h,
+                      ),
+                      Text(
+                        "القطامية",
+                        style: AppTextStyle.textStyle(
+                          appFontSize: 12.sp,
+                          appFontWeight: FontWeight.w400,
+                          color: Color(0xff110808),
+                        ),
+                      ),
+                    ],
                   ),
-                  Text(
-                    "القطامية",
-                    style: AppTextStyle.textStyle(
-                      appFontSize: 12.sp,
-                      appFontWeight: FontWeight.w400,
-                      color: Color(0xff110808),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        "42 شارع  احمد سالم التجمع الاول",
+                        style: AppTextStyle.textStyle(
+                          appFontSize: 12.sp,
+                          appFontWeight: FontWeight.w400,
+                          color: Color(0xff666666),
+                        ),
+                      ),
+                      GestureDetector(
+                        onTap: () {
+                          navigatorKey.currentContext!.pushNamed(
+                            Routes.notifications,
+                          );
+                        },
+                        child: Padding(
+                          padding: isArabic
+                              ? EdgeInsets.only(left: 24.w)
+                              : EdgeInsets.only(right: 24.w),
+                          child: SvgPicture.asset(
+                            IconsResources.notification,
+                            width: 24.w,
+                            height: 24.h,
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  GiveSpace(height: 30),
+                  SizedBox(
+                    child: CustomTextFormField(
+                      hintText: tr.search,
+                      image: IconsResources.search,
                     ),
                   ),
                 ],
-              ),
-              Text(
-                "42 شارع  احمد سالم التجمع الاول",
-                style: AppTextStyle.textStyle(
-                  appFontSize: 12.sp,
-                  appFontWeight: FontWeight.w400,
-                  color: Color(0xff666666),
-                ),
-              ),
-              GiveSpace(height: 16),
-              // SizedBox(
-              //   width: 350.w,
-              //   child: TextFormField(
-              //     decoration: InputDecoration(border: OutlineInputBorder()),
-              //   ),
-              // ),
-            ],
-          ),
-          // centerTitle: true,
-          actions: [
-            Padding(
-              padding: isArabic
-                  ? EdgeInsets.only(left: 24.w)
-                  : EdgeInsets.only(right: 24.w),
-              child: SvgPicture.asset(
-                IconsResources.notification,
-                width: 24.w,
-                height: 24.h,
               ),
             ),
           ],
@@ -76,25 +102,25 @@ displayAppBar(int index, Widget leading) {
       return AppBar(
         leading: leading,
         centerTitle: true,
-        title: TitleAppBar(title: " tr.statistics"),
+        title: TitleAppBar(title: tr.personalInformation),
       );
     case 2:
       return AppBar(
         leading: leading,
         centerTitle: true,
-        title: TitleAppBar(title: "tr.courses"),
+        title: TitleAppBar(title: tr.myBookings),
       );
     case 3:
       return AppBar(
         leading: leading,
         centerTitle: true,
-        title: TitleAppBar(title: "tr.students"),
+        title: TitleAppBar(title: tr.electronicWallet),
       );
     case 4:
       return AppBar(
         leading: leading,
         centerTitle: true,
-        title: TitleAppBar(title: "tr.cart"),
+        title: TitleAppBar(title: tr.insuranceCards),
       );
     case 5:
       // return AppBar(
@@ -117,13 +143,30 @@ displayAppBar(int index, Widget leading) {
       //     isProfile: true,
       //   ),
       // );
-      return AppBar();
+      return AppBar(
+        leading: leading,
+        centerTitle: true,
+        title: TitleAppBar(title: tr.savedAddresses),
+      );
     case 6:
       return AppBar(
         leading: leading,
         centerTitle: true,
-        title: TitleAppBar(title: "tr.settings"),
+        title: TitleAppBar(title: tr.joinAsServiceProvider),
       );
+    case 7:
+      return AppBar(
+        leading: leading,
+        centerTitle: true,
+        title: TitleAppBar(title: tr.language),
+      );
+    case 8:
+      return AppBar(
+        leading: leading,
+        centerTitle: true,
+        title: TitleAppBar(title: tr.customerService),
+      );
+
     // default:
     //   return AppBar(
     //     title: Image.asset(ImageResources.appBarLogo),

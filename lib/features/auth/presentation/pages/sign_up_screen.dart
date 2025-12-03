@@ -1,4 +1,5 @@
 import 'package:beauty_ride/core/functions/check_current_lang.dart';
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/core/routes/routes.dart';
 import 'package:beauty_ride/features/auth/presentation/cubit/auth_cubit.dart';
 import 'package:beauty_ride/features/auth/presentation/widgets/location_permission.dart';
@@ -41,7 +42,7 @@ class SignUpScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "انشاء حساب جديد",
+                        tr.createNewAccount,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff8A4242),
                           appFontSize: 18.sp,
@@ -53,7 +54,7 @@ class SignUpScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.centerRight,
                       child: Text(
-                        "قم بإنشاء حساب  لبيوتي رايد",
+                        tr.createAccountForBeautyRide,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff666666),
                           appFontSize: 14.sp,
@@ -66,20 +67,20 @@ class SignUpScreen extends StatelessWidget {
                       spacing: 10.w,
                       children: [
                         Expanded(
-                          child: CustomTextFormField(hintText: "الإسم الأول"),
+                          child: CustomTextFormField(hintText: tr.firstName),
                         ),
                         Expanded(
-                          child: CustomTextFormField(hintText: "الإسم الأخير"),
+                          child: CustomTextFormField(hintText: tr.lastName),
                         ),
                       ],
                     ),
                     GiveSpace(height: 16),
-                    CustomTextFormField(hintText: "رقم الهاتف"),
+                    CustomTextFormField(hintText: tr.phoneNumber),
                     GiveSpace(height: 16),
-                    CustomTextFormField(hintText: "البريد الإلكتروني"),
+                    CustomTextFormField(hintText: tr.email),
                     GiveSpace(height: 16),
                     CustomTextFormField(
-                      hintText: "كلمة السر",
+                      hintText: tr.password,
                       obscureText: cubit.passSignUP,
                       suffixIcon: cubit.passSignUP
                           ? Icons.visibility_off_outlined
@@ -91,7 +92,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     GiveSpace(height: 16),
                     CustomTextFormField(
-                      hintText: "تاكيد كلمة السر",
+                      hintText: tr.confirmPassword,
                       obscureText: cubit.passConfirmSignUP,
                       suffixIcon: cubit.passConfirmSignUP
                           ? Icons.visibility_off_outlined
@@ -116,7 +117,7 @@ class SignUpScreen extends StatelessWidget {
                               cubit.selectMaleOrFimale();
                             },
                             title: Text(
-                              "ذكر",
+                              tr.male,
                               style: AppTextStyle.textStyle(
                                 color: Color(0xff666666),
                                 appFontSize: 14.sp,
@@ -137,7 +138,7 @@ class SignUpScreen extends StatelessWidget {
                               cubit.selectMaleOrFimale();
                             },
                             title: Text(
-                              "انثي",
+                              tr.female,
                               style: AppTextStyle.textStyle(
                                 color: Color(0xff110808),
                                 appFontSize: 14.sp,
@@ -152,7 +153,7 @@ class SignUpScreen extends StatelessWidget {
                     Align(
                       alignment: Alignment.center,
                       child: Text(
-                        "او",
+                        tr.or,
                         style: AppTextStyle.textStyle(
                           color: Color(0xff6B6B6B),
                           appFontSize: 14.sp,
@@ -165,7 +166,7 @@ class SignUpScreen extends StatelessWidget {
                       isIcon: true,
                       color: Colors.transparent,
                       icon: IconsResources.apple,
-                      title: "الاستمرار باستخدام Apple ",
+                      title: tr.continueWithApple,
                       style: AppTextStyle.textStyle(
                         appFontSize: 14.sp,
                         appFontWeight: FontWeight.w400,
@@ -177,7 +178,7 @@ class SignUpScreen extends StatelessWidget {
                       isIcon: true,
                       color: Colors.transparent,
                       icon: IconsResources.twitter,
-                      title: "الاستمرار باستخدام Apple ",
+                      title: tr.continueWithApple,
                       style: AppTextStyle.textStyle(
                         appFontSize: 14.sp,
                         appFontWeight: FontWeight.w400,
@@ -189,7 +190,7 @@ class SignUpScreen extends StatelessWidget {
                       isIcon: true,
                       color: Colors.transparent,
                       icon: IconsResources.devicon_google,
-                      title: "الاستمرار باستخدام Apple ",
+                      title: tr.continueWithApple,
                       style: AppTextStyle.textStyle(
                         appFontSize: 14.sp,
                         appFontWeight: FontWeight.w400,
@@ -198,7 +199,7 @@ class SignUpScreen extends StatelessWidget {
                     ),
                     GiveSpace(height: 20),
                     PrimaryButton(
-                      title: "سجل الدخول",
+                      title: tr.signIn,
                       onPressed: () {
                         showModalBottomSheet(
                           context: context,
@@ -213,7 +214,7 @@ class SignUpScreen extends StatelessWidget {
                       TextSpan(
                         children: [
                           TextSpan(
-                            text: "لدي حساب بالفعل؟",
+                            text: tr.alreadyHaveAccount,
                             style: AppTextStyle.textStyle(
                               appFontSize: 16.sp,
                               appFontWeight: FontWeight.w400,
@@ -225,7 +226,7 @@ class SignUpScreen extends StatelessWidget {
                               ..onTap = () {
                                 context.pushNamedAndRemoveUntil(Routes.login);
                               },
-                            text: " سجل دخول",
+                            text: tr.signIn,
                             style: AppTextStyle.textStyle(
                               appFontSize: 16.sp,
                               appFontWeight: FontWeight.w400,

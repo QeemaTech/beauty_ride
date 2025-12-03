@@ -1,3 +1,4 @@
+import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
 import 'package:beauty_ride/shared/resources/images_resources.dart';
 import 'package:bloc/bloc.dart';
@@ -9,9 +10,42 @@ import '../model/on_board_model.dart';
 part 'on_boarding_state.dart';
 
 class OnBoardingCubit extends Cubit<OnBoardingState> {
-  OnBoardingCubit() : super(OnBoardingInitial());
+  OnBoardingCubit() : super(OnBoardingInitial()) {
+    loadOnBoardings();
+  }
   PageController controller = PageController();
   int currentIndex = 0;
+  
+  List<OnBoardModel> onBoardings = [];
+
+  void loadOnBoardings() {
+    onBoardings = [
+      OnBoardModel(
+        id: 1,
+        title: tr.beautyStartsFromComfort,
+        subTitle: tr.allBeautyServicesDelivered,
+        image: ImagesResources.bg,
+      ),
+      OnBoardModel(
+        id: 2,
+        title: tr.youSetThePrice,
+        subTitle: tr.setPriceAndWaitForOffers,
+        image: ImagesResources.bg1,
+      ),
+      OnBoardModel(
+        id: 3,
+        title: tr.yourHairdresserOnTheWay,
+        subTitle: tr.trackOrderMomentByMoment,
+        image: ImagesResources.bg,
+      ),
+      OnBoardModel(
+        id: 4,
+        title: tr.yourHairdresserOnTheWay,
+        subTitle: tr.trackOrderMomentByMoment,
+        image: ImagesResources.bg3,
+      ),
+    ];
+  }
 
   void changePage(int index) {
     currentIndex = index;
@@ -28,31 +62,4 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
     );
     emit(ChangePage(currentIndex));
   }
-
-  List<OnBoardModel> onBoardings = [
-    OnBoardModel(
-      id: 1,
-      title: "جمالك يبدأ من راحتك",
-      subTitle: "كل خدمات التجميل اللي بتحبيها توصلك لحد باب بيتك...",
-      image: ImagesResources.bg,
-    ),
-    OnBoardModel(
-      id: 2,
-      title: "إنتِ اللي بتحددي السعر",
-      subTitle: "حددي السعر اللي يناسبك، واستني عروض الكوافيرين القريبين منك",
-      image: ImagesResources.bg1,
-    ),
-    OnBoardModel(
-      id: 2,
-      title: " كوافيرك في الطريق إليك",
-      subTitle: "تتبعي طلبك لحظة بلحظة، واستمتعي بخدمة احترافية في بيتك",
-      image: ImagesResources.bg,
-    ),
-    OnBoardModel(
-      id: 2,
-      title: " كوافيرك في الطريق إليك",
-      subTitle: "تتبعي طلبك لحظة بلحظة، واستمتعي بخدمة احترافية في بيتك",
-      image: ImagesResources.bg3,
-    ),
-  ];
 }

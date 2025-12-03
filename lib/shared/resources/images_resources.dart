@@ -16,4 +16,10 @@ class ImagesResources {
   static const String profile = '$_path/profile.png';
   static const String face = '$_path/face.png';
   static const String ads = '$_path/ads.png';
+  static const String eye = '$_path/eye.jpg';
+  static const String hair = '$_path/hair.jpg';
+  static const String eye1 = '$_path/eye.png';
+  static const String hair1 = '$_path/hair.png';
+  static const String sale = '$_path/sale.png';
+  static const String bgAppbar = '$_path/bg_appbar.png';
 }

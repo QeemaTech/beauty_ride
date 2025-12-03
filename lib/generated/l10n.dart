@@ -223,6 +223,731 @@ class S {
       args: [],
     );
   }
+
+  /// `Pedicure`
+  String get pedicure {
+    return Intl.message('Pedicure', name: 'pedicure', desc: '', args: []);
+  }
+
+  /// `Nail Care`
+  String get nailCare {
+    return Intl.message('Nail Care', name: 'nailCare', desc: '', args: []);
+  }
+
+  /// `Hairstyles`
+  String get hairstyles {
+    return Intl.message('Hairstyles', name: 'hairstyles', desc: '', args: []);
+  }
+
+  /// `Skin Treatment`
+  String get skinTreatment {
+    return Intl.message(
+      'Skin Treatment',
+      name: 'skinTreatment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hair Treatment`
+  String get hairTreatment {
+    return Intl.message(
+      'Hair Treatment',
+      name: 'hairTreatment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Color Coordination`
+  String get colorCoordination {
+    return Intl.message(
+      'Color Coordination',
+      name: 'colorCoordination',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Moroccan Bath`
+  String get moroccanBath {
+    return Intl.message(
+      'Moroccan Bath',
+      name: 'moroccanBath',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Hair Length`
+  String get hairLength {
+    return Intl.message('Hair Length', name: 'hairLength', desc: '', args: []);
+  }
+
+  /// `Dye Type`
+  String get dyeType {
+    return Intl.message('Dye Type', name: 'dyeType', desc: '', args: []);
+  }
+
+  /// `Dye Color`
+  String get dyeColor {
+    return Intl.message('Dye Color', name: 'dyeColor', desc: '', args: []);
+  }
+
+  /// `Additional Notes`
+  String get additionalNotes {
+    return Intl.message(
+      'Additional Notes',
+      name: 'additionalNotes',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Next`
+  String get next {
+    return Intl.message('Next', name: 'next', desc: '', args: []);
+  }
+
+  /// `Less than 50 cm`
+  String get lessThan50cm {
+    return Intl.message(
+      'Less than 50 cm',
+      name: 'lessThan50cm',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `American imported / local`
+  String get americanImportedLocal {
+    return Intl.message(
+      'American imported / local',
+      name: 'americanImportedLocal',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Burgundy red`
+  String get burgundyRed {
+    return Intl.message(
+      'Burgundy red',
+      name: 'burgundyRed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `I am allergic to hydrogen peroxide`
+  String get allergicToHydrogenPeroxide {
+    return Intl.message(
+      'I am allergic to hydrogen peroxide',
+      name: 'allergicToHydrogenPeroxide',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Service Details`
+  String get serviceDetails {
+    return Intl.message(
+      'Service Details',
+      name: 'serviceDetails',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `50-70 cm`
+  String get hairLength50to70 {
+    return Intl.message(
+      '50-70 cm',
+      name: 'hairLength50to70',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `70-90 cm`
+  String get hairLength70to90 {
+    return Intl.message(
+      '70-90 cm',
+      name: 'hairLength70to90',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `More than 90 cm`
+  String get hairLengthMoreThan90 {
+    return Intl.message(
+      'More than 90 cm',
+      name: 'hairLengthMoreThan90',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `European`
+  String get european {
+    return Intl.message('European', name: 'european', desc: '', args: []);
+  }
+
+  /// `Asian`
+  String get asian {
+    return Intl.message('Asian', name: 'asian', desc: '', args: []);
+  }
+
+  /// `Brown`
+  String get brown {
+    return Intl.message('Brown', name: 'brown', desc: '', args: []);
+  }
+
+  /// `Black`
+  String get black {
+    return Intl.message('Black', name: 'black', desc: '', args: []);
+  }
+
+  /// `Blonde`
+  String get blonde {
+    return Intl.message('Blonde', name: 'blonde', desc: '', args: []);
+  }
+
+  /// `Other colors`
+  String get otherColors {
+    return Intl.message(
+      'Other colors',
+      name: 'otherColors',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Latest`
+  String get latest {
+    return Intl.message('Latest', name: 'latest', desc: '', args: []);
+  }
+
+  /// `Clear All`
+  String get clearAll {
+    return Intl.message('Clear All', name: 'clearAll', desc: '', args: []);
+  }
+
+  /// `Popular Search`
+  String get popularSearch {
+    return Intl.message(
+      'Popular Search',
+      name: 'popularSearch',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Nails`
+  String get nails {
+    return Intl.message('Nails', name: 'nails', desc: '', args: []);
+  }
+
+  /// `Skin Care`
+  String get skinCare {
+    return Intl.message('Skin Care', name: 'skinCare', desc: '', args: []);
+  }
+
+  /// `Login`
+  String get login {
+    return Intl.message('Login', name: 'login', desc: '', args: []);
+  }
+
+  /// `Sign in to Beauty Ride`
+  String get signInToBeautyRide {
+    return Intl.message(
+      'Sign in to Beauty Ride',
+      name: 'signInToBeautyRide',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Phone Number`
+  String get phoneNumber {
+    return Intl.message(
+      'Phone Number',
+      name: 'phoneNumber',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Password`
+  String get password {
+    return Intl.message('Password', name: 'password', desc: '', args: []);
+  }
+
+  /// `Forgot Password?`
+  String get forgotPassword {
+    return Intl.message(
+      'Forgot Password?',
+      name: 'forgotPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Or`
+  String get or {
+    return Intl.message('Or', name: 'or', desc: '', args: []);
+  }
+
+  /// `Continue with Apple`
+  String get continueWithApple {
+    return Intl.message(
+      'Continue with Apple',
+      name: 'continueWithApple',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't have an account?`
+  String get dontHaveAccount {
+    return Intl.message(
+      'Don\'t have an account?',
+      name: 'dontHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create Account`
+  String get createAccount {
+    return Intl.message(
+      'Create Account',
+      name: 'createAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create New Account`
+  String get createNewAccount {
+    return Intl.message(
+      'Create New Account',
+      name: 'createNewAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Create an account for Beauty Ride`
+  String get createAccountForBeautyRide {
+    return Intl.message(
+      'Create an account for Beauty Ride',
+      name: 'createAccountForBeautyRide',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `First Name`
+  String get firstName {
+    return Intl.message('First Name', name: 'firstName', desc: '', args: []);
+  }
+
+  /// `Last Name`
+  String get lastName {
+    return Intl.message('Last Name', name: 'lastName', desc: '', args: []);
+  }
+
+  /// `Email`
+  String get email {
+    return Intl.message('Email', name: 'email', desc: '', args: []);
+  }
+
+  /// `Confirm Password`
+  String get confirmPassword {
+    return Intl.message(
+      'Confirm Password',
+      name: 'confirmPassword',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Male`
+  String get male {
+    return Intl.message('Male', name: 'male', desc: '', args: []);
+  }
+
+  /// `Female`
+  String get female {
+    return Intl.message('Female', name: 'female', desc: '', args: []);
+  }
+
+  /// `Already have an account?`
+  String get alreadyHaveAccount {
+    return Intl.message(
+      'Already have an account?',
+      name: 'alreadyHaveAccount',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign In`
+  String get signIn {
+    return Intl.message('Sign In', name: 'signIn', desc: '', args: []);
+  }
+
+  /// `User`
+  String get user {
+    return Intl.message('User', name: 'user', desc: '', args: []);
+  }
+
+  /// `Service Provider`
+  String get serviceProvider {
+    return Intl.message(
+      'Service Provider',
+      name: 'serviceProvider',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Sign in as`
+  String get signInAs {
+    return Intl.message('Sign in as', name: 'signInAs', desc: '', args: []);
+  }
+
+  /// `Guest`
+  String get guest {
+    return Intl.message('Guest', name: 'guest', desc: '', args: []);
+  }
+
+  /// `Beauty Ride needs access to your location`
+  String get beautyRideNeedsLocationAccess {
+    return Intl.message(
+      'Beauty Ride needs access to your location',
+      name: 'beautyRideNeedsLocationAccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Allow Location Access`
+  String get allowLocationAccess {
+    return Intl.message(
+      'Allow Location Access',
+      name: 'allowLocationAccess',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Don't Allow`
+  String get dontAllow {
+    return Intl.message('Don\'t Allow', name: 'dontAllow', desc: '', args: []);
+  }
+
+  /// `We sent a 6-digit code to your phone number +965••••1234`
+  String get otpSentMessage {
+    return Intl.message(
+      'We sent a 6-digit code to your phone number +965••••1234',
+      name: 'otpSentMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Didn't receive the code?`
+  String get didntReceiveCode {
+    return Intl.message(
+      'Didn\'t receive the code?',
+      name: 'didntReceiveCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Resend in 30 seconds`
+  String get resendIn30Seconds {
+    return Intl.message(
+      'Resend in 30 seconds',
+      name: 'resendIn30Seconds',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Confirm`
+  String get confirm {
+    return Intl.message('Confirm', name: 'confirm', desc: '', args: []);
+  }
+
+  /// `Your beauty starts with your comfort`
+  String get beautyStartsFromComfort {
+    return Intl.message(
+      'Your beauty starts with your comfort',
+      name: 'beautyStartsFromComfort',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `All beauty services you love delivered to your doorstep...`
+  String get allBeautyServicesDelivered {
+    return Intl.message(
+      'All beauty services you love delivered to your doorstep...',
+      name: 'allBeautyServicesDelivered',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `You set the price`
+  String get youSetThePrice {
+    return Intl.message(
+      'You set the price',
+      name: 'youSetThePrice',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Set a price that suits you, and wait for offers from nearby hairdressers`
+  String get setPriceAndWaitForOffers {
+    return Intl.message(
+      'Set a price that suits you, and wait for offers from nearby hairdressers',
+      name: 'setPriceAndWaitForOffers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Your hairdresser is on the way to you`
+  String get yourHairdresserOnTheWay {
+    return Intl.message(
+      'Your hairdresser is on the way to you',
+      name: 'yourHairdresserOnTheWay',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Track your order moment by moment, and enjoy professional service at home`
+  String get trackOrderMomentByMoment {
+    return Intl.message(
+      'Track your order moment by moment, and enjoy professional service at home',
+      name: 'trackOrderMomentByMoment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Required Services`
+  String get requiredServices {
+    return Intl.message(
+      'Required Services',
+      name: 'requiredServices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add Service`
+  String get addService {
+    return Intl.message('Add Service', name: 'addService', desc: '', args: []);
+  }
+
+  /// `Number of people requesting the service`
+  String get numberOfServiceSeekers {
+    return Intl.message(
+      'Number of people requesting the service',
+      name: 'numberOfServiceSeekers',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Offer the price that suits you`
+  String get offerPriceThatSuitsYou {
+    return Intl.message(
+      'Offer the price that suits you',
+      name: 'offerPriceThatSuitsYou',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Recommended fare`
+  String get recommendedFare {
+    return Intl.message(
+      'Recommended fare',
+      name: 'recommendedFare',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Method`
+  String get paymentMethod {
+    return Intl.message(
+      'Payment Method',
+      name: 'paymentMethod',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cash`
+  String get cash {
+    return Intl.message('Cash', name: 'cash', desc: '', args: []);
+  }
+
+  /// `Enter discount code`
+  String get enterDiscountCode {
+    return Intl.message(
+      'Enter discount code',
+      name: 'enterDiscountCode',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Activate`
+  String get activate {
+    return Intl.message('Activate', name: 'activate', desc: '', args: []);
+  }
+
+  /// `Location`
+  String get location {
+    return Intl.message('Location', name: 'location', desc: '', args: []);
+  }
+
+  /// `Edit Location`
+  String get editLocation {
+    return Intl.message(
+      'Edit Location',
+      name: 'editLocation',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `EGP`
+  String get egp {
+    return Intl.message('EGP', name: 'egp', desc: '', args: []);
+  }
+
+  /// `Hair Styling`
+  String get hairStyling {
+    return Intl.message(
+      'Hair Styling',
+      name: 'hairStyling',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home`
+  String get home {
+    return Intl.message('Home', name: 'home', desc: '', args: []);
+  }
+
+  /// `Select Services`
+  String get selectServices {
+    return Intl.message(
+      'Select Services',
+      name: 'selectServices',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Contact Us`
+  String get contactUs {
+    return Intl.message('Contact Us', name: 'contactUs', desc: '', args: []);
+  }
+
+  /// `WhatsApp`
+  String get whatsapp {
+    return Intl.message('WhatsApp', name: 'whatsapp', desc: '', args: []);
+  }
+
+  /// `Send Message`
+  String get sendMessage {
+    return Intl.message(
+      'Send Message',
+      name: 'sendMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Write your message here`
+  String get writeYourMessage {
+    return Intl.message(
+      'Write your message here',
+      name: 'writeYourMessage',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Send`
+  String get send {
+    return Intl.message('Send', name: 'send', desc: '', args: []);
+  }
+
+  /// `Working Hours`
+  String get workingHours {
+    return Intl.message(
+      'Working Hours',
+      name: 'workingHours',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Saturday to Thursday`
+  String get saturdayToThursday {
+    return Intl.message(
+      'Saturday to Thursday',
+      name: 'saturdayToThursday',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Friday`
+  String get friday {
+    return Intl.message('Friday', name: 'friday', desc: '', args: []);
+  }
+
+  /// `Message sent successfully`
+  String get messageSentSuccessfully {
+    return Intl.message(
+      'Message sent successfully',
+      name: 'messageSentSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Address`
+  String get addNewAddress {
+    return Intl.message(
+      'Add New Address',
+      name: 'addNewAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Home Screen`
+  String get homeScreen {
+    return Intl.message('Home Screen', name: 'homeScreen', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

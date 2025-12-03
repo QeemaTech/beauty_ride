@@ -11,4 +11,17 @@ class Routes {
   static const signUp = "/signUp";
   static const notifications = "/notifications";
   static const messages = "/messages";
+  static const serviceScreen = "/serviceScreen";
+  static const searchScreen = "/searchScreen";
+  static const serviceDetailsScreen = "/serviceDetailsScreen";
+  static const serviceDetailsScreenPart2 = "/serviceDetailsScreenpart2";
+  static const infoScreen = "/infoScreen";
+  static const myBookingsScreen = "/myBookingsScreen";
+  static const electronicWalletScreen = "/electronicWalletScreen";
+  static const insuranceCardsScreen = "/insuranceCardsScreen";
+  static const savedaddressesScreen = "/savedaddressesScreen";
+  static const joinAsServiceProviderScreen = "/joinAsServiceProviderScreen";
+  static const language = "/language";
+  static const customerServiceScreen = "/customerServiceScreen";
+  static const customServiceScreen = "/customServiceScreen";
 }
