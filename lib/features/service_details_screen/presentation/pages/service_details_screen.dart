@@ -26,11 +26,7 @@ class ServiceDetailsScreen extends StatelessWidget {
       tr.hairLengthMoreThan90,
     ];
 
-    final dyeTypeOptions = [
-      tr.americanImportedLocal,
-      tr.european,
-      tr.asian,
-    ];
+    final dyeTypeOptions = [tr.americanImportedLocal, tr.european, tr.asian];
 
     final dyeColorOptions = [
       tr.burgundyRed,
@@ -43,12 +39,9 @@ class ServiceDetailsScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => ServiceDetailsScreenCubit(),
       child: Scaffold(
-        backgroundColor: Colors.white,
         appBar: PreferredSize(
           preferredSize: Size.fromHeight(50.h),
-          child: CustomAppbar(
-            title: tr.serviceDetails,
-          ),
+          child: CustomAppbar(title: tr.serviceDetails, isBack: true),
         ),
         body: BlocBuilder<ServiceDetailsScreenCubit, ServiceDetailsScreenState>(
           builder: (context, state) {

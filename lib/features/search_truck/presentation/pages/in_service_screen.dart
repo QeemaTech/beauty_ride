@@ -12,24 +12,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-import 'package:hive_flutter/adapters.dart';
 import 'package:svg_flutter/svg.dart';
 
-class SearchTruckScreen extends StatefulWidget {
-  const SearchTruckScreen({super.key});
+class InServiceScreen extends StatefulWidget {
+  const InServiceScreen({super.key});
 
   @override
-  State<SearchTruckScreen> createState() => _SearchTruckScreenState();
+  State<InServiceScreen> createState() => _InServiceScreenState();
 }
 
-class _SearchTruckScreenState extends State<SearchTruckScreen> {
+class _InServiceScreenState extends State<InServiceScreen> {
   GoogleMapController? mapController;
-
-  @override
-  void dispose() {
-    super.dispose();
-    // SearchTruckCubit().completerController!.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -435,12 +428,3 @@ class _SearchTruckScreenState extends State<SearchTruckScreen> {
     );
   }
 }
-
-
-
-/*
-
-
-
-  
-*/

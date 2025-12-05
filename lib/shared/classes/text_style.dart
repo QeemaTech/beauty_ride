@@ -15,7 +15,8 @@ class AppTextStyle {
     double? decorationThickness,
     double? letterSpacing,
     List<Shadow>? shadows,
-    bool isMPLUS1 = false,
+    bool cairo = false,
+    bool inter = false,
   }) {
     return TextStyle(
       fontSize: appFontSize,
@@ -25,7 +26,11 @@ class AppTextStyle {
       decorationColor: decorationColor,
       decorationThickness: decorationThickness,
       decorationStyle: decorationStyle,
-      fontFamily: isMPLUS1 ? AppStrings.mPLUS1 : AppStrings.fontFamily,
+      fontFamily: cairo
+          ? AppStrings.cairo
+          : inter
+          ? AppStrings.inter
+          : AppStrings.fontFamily,
       shadows: shadows,
       height: appFontHeight != null && appFontSize != null
           ? appFontHeight / appFontSize!

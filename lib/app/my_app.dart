@@ -27,7 +27,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MultiBlocProvider(
           providers: [
-            BlocProvider(create: (context) => ThemeAppCubit()),
+            BlocProvider.value(value: themeAppCubit),
             BlocProvider(create: (context) => LocationCubit()),
             BlocProvider(create: (context) => SearchTruckCubit()),
             BlocProvider(create: (context) => DashboardCubit()),
@@ -39,11 +39,17 @@ class MyApp extends StatelessWidget {
                 builder: (context, languageState) {
                   final locale = languageState is LanguageLoaded
                       ? languageState.locale
-                      : const Locale('ar');
+                      : languageState is LanguageSelected
+                          ? languageState.selectedLocale
+                          : const Locale('ar');
 
                   return MaterialApp(
+                    key: ValueKey('material_app_${locale.languageCode}'),
                     theme: ThemeApp.lightTheme,
-                    //theme: themeState.themeData,
+                    darkTheme: ThemeApp.darkTheme,
+                    themeMode: themeState is DarkTheme 
+                        ? ThemeMode.dark 
+                        : ThemeMode.light,
                     navigatorKey: navigatorKey,
                     debugShowCheckedModeBanner: false,
                     onGenerateRoute: RoutesGenerator.onGenerateRoute,

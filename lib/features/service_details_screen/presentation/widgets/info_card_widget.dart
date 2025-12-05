@@ -59,6 +59,7 @@ class InfoCardWidget extends StatelessWidget {
                       Text(
                         value,
                         style: AppTextStyle.textStyle(
+                          cairo: true,
                           appFontSize: AppFontSize.textLG,
                           appFontWeight: AppFontWeight.bold,
                           color: Color(0xff110808),

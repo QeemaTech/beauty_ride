@@ -1,7 +1,9 @@
+import 'package:beauty_ride/app/my_app.dart';
 import 'package:beauty_ride/core/routes/routes.dart';
 import 'package:beauty_ride/features/auth/presentation/pages/login_screen.dart';
 import 'package:beauty_ride/features/auth/presentation/pages/sign_up_screen.dart';
 import 'package:beauty_ride/features/customer_service/presentation/pages/customer_service_screen.dart';
+import 'package:beauty_ride/features/dashboard/cubit/dashboard_cubit.dart';
 import 'package:beauty_ride/features/dashboard/screens/dashboard_screen.dart';
 import 'package:beauty_ride/features/electronic_Wallet/presentation/pages/electronic_wallet_screen.dart';
 import 'package:beauty_ride/features/home/presentation/pages/home_screen.dart';
@@ -9,12 +11,15 @@ import 'package:beauty_ride/features/info_screen/presentation/pages/info_screen.
 import 'package:beauty_ride/features/insurance_cards/presentation/pages/insurance_cards_screen.dart';
 import 'package:beauty_ride/features/join_as_service_provider/presentation/pages/join_as_service_provider_screen.dart';
 import 'package:beauty_ride/features/language/presentation/pages/language_screen.dart';
+import 'package:beauty_ride/features/myBookings/presentation/pages/booking_screen.dart';
 import 'package:beauty_ride/features/myBookings/presentation/pages/my_bookings_screen.dart';
 import 'package:beauty_ride/features/notifications/presentation/pages/notifications_screen.dart';
 import 'package:beauty_ride/features/on_boarding/pages/on_boarding_screen.dart';
 import 'package:beauty_ride/features/saved_addresses/presentation/pages/savedAddresses_screen.dart';
 import 'package:beauty_ride/features/search/presentation/pages/search_screen.dart';
+import 'package:beauty_ride/features/search_truck/presentation/pages/in_service_screen.dart';
 import 'package:beauty_ride/features/search_truck/presentation/pages/search_truck_screen.dart';
+import 'package:beauty_ride/features/search_truck/presentation/pages/trucking_screen.dart';
 import 'package:beauty_ride/features/service_details_screen/presentation/pages/service_details_screen.dart';
 import 'package:beauty_ride/features/service_details_screen/presentation/pages/service_details_screen_part2.dart';
 import 'package:beauty_ride/features/service_screen/presentation/pages/service_screen.dart';
@@ -23,12 +28,12 @@ import 'package:beauty_ride/features/splash/presentation/pages/splash_screen.dar
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RoutesGenerator {
   static Route<dynamic> onGenerateRoute(RouteSettings settings) {
     final isIos = defaultTargetPlatform == TargetPlatform.iOS;
     final nameRoute = settings.name;
-    final arg = settings.arguments;
 
     switch (nameRoute) {
       case Routes.splash:
@@ -44,7 +49,40 @@ class RoutesGenerator {
       case Routes.signUp:
         return _buildRoute(const SignUpScreen(), isIos);
       case Routes.dashboard:
-        return _buildRoute(DashboardScreen(), isIos);
+        // Ensure DashboardCubit is available for DashboardScreen
+        // Try to get it from app-level context, otherwise create new instance
+        Widget dashboardWidget;
+        try {
+          final currentContext = navigatorKey.currentContext;
+          if (currentContext != null) {
+            try {
+              final cubit = currentContext.read<DashboardCubit>();
+              dashboardWidget = BlocProvider.value(
+                value: cubit,
+                child: const DashboardScreen(),
+              );
+            } catch (e) {
+              // If context doesn't have DashboardCubit, create new instance
+              dashboardWidget = BlocProvider(
+                create: (context) => DashboardCubit(),
+                child: const DashboardScreen(),
+              );
+            }
+          } else {
+            // If context is not available, create new instance
+            dashboardWidget = BlocProvider(
+              create: (context) => DashboardCubit(),
+              child: const DashboardScreen(),
+            );
+          }
+        } catch (e) {
+          // Fallback: create new instance if anything goes wrong
+          dashboardWidget = BlocProvider(
+            create: (context) => DashboardCubit(),
+            child: const DashboardScreen(),
+          );
+        }
+        return _buildRoute(dashboardWidget, isIos);
       case Routes.serviceScreen:
         return _buildRoute(ServiceScreen(), isIos);
       case Routes.searchScreen:
@@ -73,6 +111,14 @@ class RoutesGenerator {
         return _buildRoute(NotificationsScreen(), isIos);
       case Routes.searchTruckScreen:
         return _buildRoute(SearchTruckScreen(), isIos);
+      case Routes.truckingScreen:
+        return _buildRoute(TruckingScreen(), isIos);
+      case Routes.inServiceScreen:
+        return _buildRoute(InServiceScreen(), isIos);
+      case Routes.myBookingScreen:
+        return _buildRoute(MyBookingsScreen(), isIos);
+      case Routes.bookingScreen:
+        return _buildRoute(BookingScreen(), isIos);
 
       default:
         return _buildRoute(_undefinedWidget(), isIos);

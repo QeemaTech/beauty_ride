@@ -1,5 +1,5 @@
 import 'package:beauty_ride/app/my_app.dart';
-import 'package:beauty_ride/app_injections.dart'as di;
+import 'package:beauty_ride/app_injections.dart' as di;
 import 'package:beauty_ride/core/classes/my_logger.dart';
 import 'package:beauty_ride/core/storage/pref_services.dart';
 import 'package:beauty_ride/core/storage/secure_storage_service.dart';

@@ -1,10 +1,10 @@
+import 'package:beauty_ride/core/functions/check_current_lang.dart';
 import 'package:beauty_ride/core/functions/display_appBar.dart';
 import 'package:beauty_ride/core/functions/display_widgets.dart';
 import 'package:beauty_ride/features/dashboard/cubit/dashboard_cubit.dart';
 import 'package:beauty_ride/features/dashboard/widgets/custom_drawer.dart';
 import 'package:beauty_ride/shared/resources/color_resources.dart';
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
-import 'package:beauty_ride/shared/resources/images_resources.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -18,39 +18,34 @@ class DashboardScreen extends StatelessWidget {
     return BlocConsumer<DashboardCubit, DashboardState>(
       listener: (context, state) {},
       builder: (context, state) {
-        return BlocConsumer<DashboardCubit, DashboardState>(
-          listener: (context, state) {},
-          builder: (context, state) {
-            final cubit = context.read<DashboardCubit>();
-            return Scaffold(
-              key: cubit.scaffoldKey,
-              drawer: CustomDrawer(),
-              appBar: displayAppBar(
-                cubit.currentIndex,
-                GestureDetector(
-                  onTap: () => cubit.scaffoldKey.currentState?.openDrawer(),
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(
-                      horizontal: 8.w,
-                      vertical: 8.h,
-                    ),
-                    child: Container(
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6.r),
-                        color: ColorResources.primaryColor,
-                        // image: DecorationImage(
-                        //   image: AssetImage(ImagesResources.face),
-                        // ),
-                      ),
-                      child: SvgPicture.asset(IconsResources.menu),
-                    ),
-                  ),
+        final cubit = context.read<DashboardCubit>();
+
+        return Scaffold(
+          key: cubit.scaffoldKey,
+          drawer: CustomDrawer(),
+          appBar: displayAppBar(
+            cubit.currentIndex,
+            GestureDetector(
+              onTap: () => cubit.scaffoldKey.currentState?.openDrawer(),
+              child: Container(
+                padding: EdgeInsets.symmetric(horizontal: 1.w, vertical: 1.h),
+                margin: isArabic
+                    ? EdgeInsets.only(bottom: 20.h, right: 15.w, top: 2.h)
+                    : EdgeInsets.only(bottom: 20.h, left: 10.w, top: 2.h),
+                alignment: Alignment.center,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(6.r),
+                  color: ColorResources.primaryColor,
+                ),
+                child: SvgPicture.asset(
+                  IconsResources.menu,
+                  width: 24.w,
+                  height: 24.h,
                 ),
               ),
-              body: displayWidgets(cubit.currentIndex),
-            );
-          },
+            ),
+          ),
+          body: displayWidgets(cubit.currentIndex),
         );
       },
     );

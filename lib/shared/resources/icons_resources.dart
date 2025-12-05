@@ -41,4 +41,8 @@ class IconsResources {
   static const String edit = '$_path/edit-2.svg';
   static const String calendar = '$_path/calendar.svg';
   static const String clock = '$_path/clock.svg';
+  static const String calling = '$_path/calling.svg';
+  static const String message = '$_path/message.svg';
+  static const String moneys = '$_path/moneys.svg';
+  static const String correct = '$_path/correct.svg';
 }

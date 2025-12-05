@@ -1,6 +1,5 @@
 import 'package:beauty_ride/core/functions/translate.dart';
 import 'package:beauty_ride/features/info_screen/presentation/cubit/info_screen_cubit.dart';
-import 'package:beauty_ride/features/on_boarding/widgets/custom_appbar.dart';
 import 'package:beauty_ride/shared/classes/text_style.dart';
 import 'package:beauty_ride/shared/resources/images_resources.dart';
 import 'package:beauty_ride/shared/widgets/custom_body_app.dart';
@@ -56,7 +55,7 @@ class InfoScreen extends StatelessWidget {
             if (state is InfoScreenSuccess) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('تم حفظ البيانات بنجاح'),
+                  content: Text(tr.dataSavedSuccessfully),
                   backgroundColor: Colors.green,
                 ),
               );
@@ -113,6 +112,7 @@ class InfoScreen extends StatelessWidget {
 
                       // First Name Field
                       CustomTextFormField(
+                        obscureText: true,
                         controller: TextEditingController(
                           text: state.firstName,
                         ),
@@ -126,6 +126,7 @@ class InfoScreen extends StatelessWidget {
 
                       // Last Name Field
                       CustomTextFormField(
+                        obscureText: true,
                         controller: TextEditingController(text: state.lastName),
                         hintText: tr.lastName,
                         isBorder: true,
@@ -137,6 +138,7 @@ class InfoScreen extends StatelessWidget {
 
                       // Email Field
                       CustomTextFormField(
+                        obscureText: true,
                         controller: TextEditingController(text: state.email),
                         hintText: tr.email,
                         keyboardType: TextInputType.emailAddress,
@@ -149,6 +151,7 @@ class InfoScreen extends StatelessWidget {
 
                       // Phone Field
                       CustomTextFormField(
+                        obscureText: true,
                         controller: TextEditingController(text: state.phone),
                         hintText: tr.phoneNumber,
                         keyboardType: TextInputType.phone,
@@ -176,7 +179,7 @@ class InfoScreen extends StatelessWidget {
                         child: Row(
                           children: [
                             Text(
-                              'الجنس',
+                              tr.gender,
                               style: AppTextStyle.textStyle(
                                 appFontSize: AppFontSize.textSM,
                                 appFontWeight: AppFontWeight.medium,
@@ -248,8 +251,9 @@ class InfoScreen extends StatelessWidget {
                               Text(
                                 state.dateOfBirth != null
                                     ? state.dateOfBirth!
-                                    : 'تاريخ الميلاد',
+                                    : tr.dateOfBirth,
                                 style: AppTextStyle.textStyle(
+                                  cairo: true,
                                   appFontSize: AppFontSize.textSM,
                                   appFontWeight: AppFontWeight.regular,
                                   color: state.dateOfBirth != null
@@ -271,11 +275,11 @@ class InfoScreen extends StatelessWidget {
 
                       // Save Button
                       PrimaryButton(
-                        title: 'حفظ',
+                        title: tr.save,
                         onPressed: () {
                           cubit.saveUserData();
                         },
-                        color: Color(0xFF8A4242),
+                        //color: Color(0xFF8A4242),
                       ),
 
                       GiveSpace(height: 40),

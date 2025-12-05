@@ -61,7 +61,6 @@ class ServiceScreen extends StatelessWidget {
         builder: (context, state) {
           final cubit = context.read<ServiceScreenCubit>();
           return Scaffold(
-            backgroundColor: Colors.white,
             appBar: PreferredSize(
               preferredSize: Size.fromHeight(50.h),
               child: CustomAppbar(title: tr.ourServices),

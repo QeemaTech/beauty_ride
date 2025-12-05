@@ -1033,6 +1033,356 @@ class S {
   String get userName {
     return Intl.message('User Name', name: 'userName', desc: '', args: []);
   }
+
+  /// `Arabic`
+  String get arabic {
+    return Intl.message('Arabic', name: 'arabic', desc: '', args: []);
+  }
+
+  /// `English`
+  String get english {
+    return Intl.message('English', name: 'english', desc: '', args: []);
+  }
+
+  /// `Skip`
+  String get skip {
+    return Intl.message('Skip', name: 'skip', desc: '', args: []);
+  }
+
+  /// `Booking`
+  String get booking {
+    return Intl.message('Booking', name: 'booking', desc: '', args: []);
+  }
+
+  /// `Confirm Payment`
+  String get confirmPayment {
+    return Intl.message(
+      'Confirm Payment',
+      name: 'confirmPayment',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Payment Successful`
+  String get paymentSuccessful {
+    return Intl.message(
+      'Payment Successful',
+      name: 'paymentSuccessful',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Booking Confirmed`
+  String get bookingConfirmed {
+    return Intl.message(
+      'Booking Confirmed',
+      name: 'bookingConfirmed',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Back to Home`
+  String get backToHome {
+    return Intl.message('Back to Home', name: 'backToHome', desc: '', args: []);
+  }
+
+  /// `Data Saved Successfully`
+  String get dataSavedSuccessfully {
+    return Intl.message(
+      'Data Saved Successfully',
+      name: 'dataSavedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Gender`
+  String get gender {
+    return Intl.message('Gender', name: 'gender', desc: '', args: []);
+  }
+
+  /// `Date of Birth`
+  String get dateOfBirth {
+    return Intl.message(
+      'Date of Birth',
+      name: 'dateOfBirth',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Save`
+  String get save {
+    return Intl.message('Save', name: 'save', desc: '', args: []);
+  }
+
+  /// `Add Insurance Card`
+  String get addInsuranceCard {
+    return Intl.message(
+      'Add Insurance Card',
+      name: 'addInsuranceCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No insurance cards saved`
+  String get noInsuranceCardsSaved {
+    return Intl.message(
+      'No insurance cards saved',
+      name: 'noInsuranceCardsSaved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Default`
+  String get defaultText {
+    return Intl.message('Default', name: 'defaultText', desc: '', args: []);
+  }
+
+  /// `Set as Default`
+  String get setAsDefault {
+    return Intl.message(
+      'Set as Default',
+      name: 'setAsDefault',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit`
+  String get edit {
+    return Intl.message('Edit', name: 'edit', desc: '', args: []);
+  }
+
+  /// `Delete`
+  String get delete {
+    return Intl.message('Delete', name: 'delete', desc: '', args: []);
+  }
+
+  /// `Card Holder`
+  String get cardHolder {
+    return Intl.message('Card Holder', name: 'cardHolder', desc: '', args: []);
+  }
+
+  /// `Card Number`
+  String get cardNumber {
+    return Intl.message('Card Number', name: 'cardNumber', desc: '', args: []);
+  }
+
+  /// `Expiry Date`
+  String get expiryDate {
+    return Intl.message('Expiry Date', name: 'expiryDate', desc: '', args: []);
+  }
+
+  /// `OK`
+  String get ok {
+    return Intl.message('OK', name: 'ok', desc: '', args: []);
+  }
+
+  /// `Are you sure you want to delete this card?`
+  String get areYouSureDeleteCard {
+    return Intl.message(
+      'Are you sure you want to delete this card?',
+      name: 'areYouSureDeleteCard',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Cancel`
+  String get cancel {
+    return Intl.message('Cancel', name: 'cancel', desc: '', args: []);
+  }
+
+  /// `Language Changed Successfully`
+  String get languageChangedSuccessfully {
+    return Intl.message(
+      'Language Changed Successfully',
+      name: 'languageChangedSuccessfully',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `No addresses saved`
+  String get noAddressesSaved {
+    return Intl.message(
+      'No addresses saved',
+      name: 'noAddressesSaved',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Are you sure you want to delete this address?`
+  String get areYouSureDeleteAddress {
+    return Intl.message(
+      'Are you sure you want to delete this address?',
+      name: 'areYouSureDeleteAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit Address`
+  String get editAddress {
+    return Intl.message(
+      'Edit Address',
+      name: 'editAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Delete Address`
+  String get deleteAddress {
+    return Intl.message(
+      'Delete Address',
+      name: 'deleteAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add New Address`
+  String get addAddress {
+    return Intl.message(
+      'Add New Address',
+      name: 'addAddress',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add insurance card screen will be added soon`
+  String get addInsuranceCardScreen {
+    return Intl.message(
+      'Add insurance card screen will be added soon',
+      name: 'addInsuranceCardScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit insurance card screen will be added soon`
+  String get editInsuranceCardScreen {
+    return Intl.message(
+      'Edit insurance card screen will be added soon',
+      name: 'editInsuranceCardScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add address screen will be added soon`
+  String get addAddressScreen {
+    return Intl.message(
+      'Add address screen will be added soon',
+      name: 'addAddressScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Edit address screen will be added soon`
+  String get editAddressScreen {
+    return Intl.message(
+      'Edit address screen will be added soon',
+      name: 'editAddressScreen',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Building`
+  String get building {
+    return Intl.message('Building', name: 'building', desc: '', args: []);
+  }
+
+  /// `Floor`
+  String get floor {
+    return Intl.message('Floor', name: 'floor', desc: '', args: []);
+  }
+
+  /// `Apartment`
+  String get apartment {
+    return Intl.message('Apartment', name: 'apartment', desc: '', args: []);
+  }
+
+  /// `On the Way`
+  String get onTheWayText {
+    return Intl.message('On the Way', name: 'onTheWayText', desc: '', args: []);
+  }
+
+  /// `minutes`
+  String get minutes {
+    return Intl.message('minutes', name: 'minutes', desc: '', args: []);
+  }
+
+  /// `Dark Mode`
+  String get darkMode {
+    return Intl.message('Dark Mode', name: 'darkMode', desc: '', args: []);
+  }
+
+  /// `Light Mode`
+  String get lightMode {
+    return Intl.message('Light Mode', name: 'lightMode', desc: '', args: []);
+  }
+
+  /// `Wallet Balance`
+  String get walletBalance {
+    return Intl.message(
+      'Wallet Balance',
+      name: 'walletBalance',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `View wallet statement`
+  String get viewWalletStatement {
+    return Intl.message(
+      'View wallet statement',
+      name: 'viewWalletStatement',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Add funds`
+  String get addFunds {
+    return Intl.message('Add funds', name: 'addFunds', desc: '', args: []);
+  }
+
+  /// `Cards`
+  String get cards {
+    return Intl.message('Cards', name: 'cards', desc: '', args: []);
+  }
+
+  /// `Add`
+  String get add {
+    return Intl.message('Add', name: 'add', desc: '', args: []);
+  }
+
+  /// `Your payment info is stored securely`
+  String get yourPaymentInfoStoredSecurely {
+    return Intl.message(
+      'Your payment info is stored securely',
+      name: 'yourPaymentInfoStoredSecurely',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Visa`
+  String get visa {
+    return Intl.message('Visa', name: 'visa', desc: '', args: []);
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

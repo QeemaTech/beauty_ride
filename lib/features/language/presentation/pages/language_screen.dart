@@ -31,11 +31,7 @@ class LanguageScreen extends StatelessWidget {
               final locale = state.locale;
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text(
-                    locale.languageCode == 'ar'
-                        ? 'تم تغيير اللغة بنجاح'
-                        : 'Language changed successfully',
-                  ),
+                  content: Text(tr.languageChangedSuccessfully),
                   duration: Duration(seconds: 2),
                 ),
               );
@@ -66,7 +62,7 @@ class LanguageScreen extends StatelessWidget {
                   },
                   activeColor: Color(0xff8A4242),
                   title: Text(
-                    currentLocale.languageCode == 'ar' ? 'العربية' : 'Arabic',
+                    tr.arabic,
                     style: AppTextStyle.textStyle(
                       appFontSize: 16.sp,
                       appFontWeight: FontWeight.w400,
@@ -94,9 +90,7 @@ class LanguageScreen extends StatelessWidget {
                   },
                   activeColor: Color(0xff8A4242),
                   title: Text(
-                    currentLocale.languageCode == 'ar'
-                        ? 'الإنجليزية'
-                        : 'English',
+                    tr.english,
                     style: AppTextStyle.textStyle(
                       appFontSize: 16.sp,
                       appFontWeight: FontWeight.w400,
@@ -115,7 +109,7 @@ class LanguageScreen extends StatelessWidget {
                 Spacer(),
                 // Save Button
                 PrimaryButton(
-                  title: currentLocale.languageCode == 'ar' ? 'حفظ' : 'Save',
+                  title: tr.save,
                   onPressed: hasChanges
                       ? () {
                           cubit.saveLanguage();

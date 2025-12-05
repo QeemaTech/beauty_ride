@@ -1,3 +1,4 @@
+import 'package:beauty_ride/core/functions/check_current_lang.dart';
 import 'package:beauty_ride/shared/resources/icons_resources.dart';
 import 'package:beauty_ride/shared/widgets/give_space.dart';
 import 'package:flutter/cupertino.dart';

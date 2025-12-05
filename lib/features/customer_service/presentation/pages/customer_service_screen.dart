@@ -42,14 +42,12 @@ class CustomerServiceScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => CustomerServiceCubit(),
       child: Scaffold(
-        backgroundColor: Color(0xFFF5F5F5),
-
         body: BlocConsumer<CustomerServiceCubit, CustomerServiceState>(
           listener: (context, state) {
             if (state is CustomerServiceSuccess) {
               ScaffoldMessenger.of(context).showSnackBar(
                 SnackBar(
-                  content: Text('تم إرسال الرسالة بنجاح'),
+                  content: Text(tr.messageSentSuccessfully),
                   backgroundColor: Colors.green,
                 ),
               );
@@ -68,7 +66,7 @@ class CustomerServiceScreen extends StatelessWidget {
 
                       // Contact Information Section
                       Text(
-                        'تواصل معنا',
+                        tr.contactUs,
                         style: AppTextStyle.textStyle(
                           appFontSize: AppFontSize.textLG,
                           appFontWeight: AppFontWeight.bold,
@@ -98,7 +96,7 @@ class CustomerServiceScreen extends StatelessWidget {
                       // WhatsApp
                       _buildContactCard(
                         icon: Icons.chat,
-                        title: 'واتساب',
+                        title: tr.whatsapp,
                         value: '+20 123 456 7890',
                         onTap: () => _launchUrl('https://wa.me/201234567890'),
                       ),
@@ -107,7 +105,7 @@ class CustomerServiceScreen extends StatelessWidget {
 
                       // Contact Form Section
                       Text(
-                        'أرسل رسالة',
+                        tr.sendMessage,
                         style: AppTextStyle.textStyle(
                           appFontSize: AppFontSize.textLG,
                           appFontWeight: AppFontWeight.bold,
@@ -170,7 +168,7 @@ class CustomerServiceScreen extends StatelessWidget {
                             color: Colors.black87,
                           ),
                           decoration: InputDecoration(
-                            hintText: 'اكتب رسالتك هنا',
+                            hintText: tr.writeYourMessage,
                             hintStyle: AppTextStyle.textStyle(
                               appFontSize: AppFontSize.textSM,
                               appFontWeight: AppFontWeight.regular,
@@ -186,7 +184,7 @@ class CustomerServiceScreen extends StatelessWidget {
 
                       // Submit Button
                       PrimaryButton(
-                        title: 'إرسال',
+                        title: tr.send,
                         onPressed: () {
                           cubit.submitForm();
                         },
@@ -197,7 +195,7 @@ class CustomerServiceScreen extends StatelessWidget {
 
                       // Working Hours Section
                       Text(
-                        'ساعات العمل',
+                        tr.workingHours,
                         style: AppTextStyle.textStyle(
                           appFontSize: AppFontSize.textLG,
                           appFontWeight: AppFontWeight.bold,
@@ -222,12 +220,12 @@ class CustomerServiceScreen extends StatelessWidget {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             _buildWorkingHoursRow(
-                              'السبت إلى الخميس',
+                              tr.saturdayToThursday,
                               '9:00 AM - 10:00 PM',
                             ),
                             SizedBox(height: 8.h),
                             _buildWorkingHoursRow(
-                              'الجمعة',
+                              tr.friday,
                               '2:00 PM - 10:00 PM',
                             ),
                           ],

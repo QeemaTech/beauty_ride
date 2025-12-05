@@ -39,138 +39,139 @@ class OnBoardingScreen extends StatelessWidget {
                   itemCount: onBoardings.length,
                   itemBuilder: (_, index) {
                     final onBoard = onBoardings[index];
-                return Container(
-                  alignment: Alignment.bottomCenter,
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(onBoard.image),
-                      fit: BoxFit.cover,
-                    ),
-                  ),
-                  child: CustomBodyApp(
-                    child: Column(
-                      // mainAxisSize: MainAxisSize.min,
-                      children: [
-                        if(index !=3)
-                        GestureDetector(
-                          onTap: () {
-                            context.pushReplacementNamed(Routes.login);
-                          },
-                          child: Padding(
-                            padding: EdgeInsets.symmetric(
-                              horizontal: 20.w,
-                              vertical: 40.h,
-                            ),
-                            child: Align(
-                              alignment: isArabic
-                                  ? Alignment.topRight
-                                  : Alignment.topLeft,
-                              child: Text(
-                                tr.next,
-                                style: AppTextStyle.textStyle(
-                                  appFontSize: 18.sp,
-                                  appFontWeight: FontWeight.w400,
-                                  color: Color(0xff683131),
-                                ),
-                              ),
-                            ),
-                          ),
+                    return Container(
+                      alignment: Alignment.bottomCenter,
+                      decoration: BoxDecoration(
+                        image: DecorationImage(
+                          image: AssetImage(onBoard.image),
+                          fit: BoxFit.cover,
                         ),
-                        Spacer(),
-                        Text(
-                          textAlign: TextAlign.center,
-                          onBoard.title,
-                          style: AppTextStyle.textStyle(
-                            appFontSize: 24,
-                            appFontWeight: FontWeight.w400,
-                            color: Color(0xffFFFFFF),
-                          ),
-                        ),
-                        GiveSpace(height: 9),
-                        Text(
-                          textAlign: TextAlign.center,
-                          onBoard.subTitle,
-                          style: AppTextStyle.textStyle(
-                            appFontSize: 16,
-                            appFontWeight: FontWeight.w400,
-                            color: Color(0xffFFFFFF),
-                          ),
-                        ),
-                        GiveSpace(height: 32),
-                        index == 3
-                            ? Column(
-                                spacing: 16.h,
-                                children: [
-                                  PrimaryButton(
-                                    title: tr.user,
-                                    onPressed: () {
-                                      context.pushReplacementNamed(
-                                        Routes.login,
-                                      );
-                                    },
+                      ),
+                      child: CustomBodyApp(
+                        child: Column(
+                          // mainAxisSize: MainAxisSize.min,
+                          children: [
+                            if (index != 3)
+                              GestureDetector(
+                                onTap: () {
+                                  cubit.skipToLastPage(onBoardings.length);
+                                },
+                                child: Padding(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 20.w,
+                                    vertical: 40.h,
                                   ),
-                                  PrimaryButton(
-                                    title: tr.serviceProvider,
-                                    onPressed: () {
-                                      context.pushReplacementNamed(
-                                        Routes.signUp,
-                                      );
-                                    },
-                                  ),
-                                  Text.rich(
-                                    TextSpan(
-                                      children: [
-                                        TextSpan(
-                                          text: tr.signInAs,
-                                          style: AppTextStyle.textStyle(
-                                            appFontSize: 16.sp,
-                                            appFontWeight: FontWeight.w400,
-                                            color: Color(0xffFFFFFF),
-                                          ),
-                                        ),
-                                        TextSpan(
-                                          recognizer: TapGestureRecognizer()
-                                            ..onTap = () {
-                                              context.pushNamedAndRemoveUntil(
-                                                Routes.dashboard,
-                                              );
-                                            },
-                                          text: tr.guest,
-                                          style: AppTextStyle.textStyle(
-                                            appFontSize: 16.sp,
-                                            appFontWeight: FontWeight.w400,
-                                            color: Color(0xff683131),
-                                          ),
-                                        ),
-                                      ],
+                                  child: Align(
+                                    alignment: isArabic
+                                        ? Alignment.topRight
+                                        : Alignment.topLeft,
+                                    child: Text(
+                                      tr.skip,
+                                      style: AppTextStyle.textStyle(
+                                        appFontSize: 18.sp,
+                                        appFontWeight: FontWeight.w400,
+                                        color: Color(0xff683131),
+                                      ),
                                     ),
                                   ),
-                                ],
-                              )
-                            : PrimaryButton(
-                                title: tr.next,
-                                onPressed: () {
-                                  cubit.nextPage(onBoardings.length);
-                                },
+                                ),
                               ),
-                        GiveSpace(height: 16),
-                        if (index != 3)
-                          SmoothPageIndicator(
-                            controller: cubit.controller, // PageController
-                            count: onBoardings.length - 1,
-                            effect: ExpandingDotsEffect(
-                              activeDotColor: Color(0xff683131),
-                              dotColor: Color(0xffF9FAFA),
-                            ), // your preferred effect
-                            onDotClicked: (index) {},
-                          ),
-                        GiveSpace(height: 50),
-                      ],
-                    ),
-                  ),
+                            Spacer(),
+                            Text(
+                              textAlign: TextAlign.center,
+                              onBoard.title,
+                              style: AppTextStyle.textStyle(
+                                appFontSize: 24,
+                                appFontWeight: FontWeight.w400,
+                                color: Color(0xffFFFFFF),
+                              ),
+                            ),
+                            GiveSpace(height: 9),
+                            Text(
+                              textAlign: TextAlign.center,
+                              onBoard.subTitle,
+                              style: AppTextStyle.textStyle(
+                                appFontSize: 16,
+                                appFontWeight: FontWeight.w400,
+                                color: Color(0xffFFFFFF),
+                              ),
+                            ),
+                            GiveSpace(height: 32),
+                            index == 3
+                                ? Column(
+                                    spacing: 16.h,
+                                    children: [
+                                      PrimaryButton(
+                                        title: tr.user,
+                                        onPressed: () {
+                                          context.pushReplacementNamed(
+                                            Routes.login,
+                                          );
+                                        },
+                                      ),
+                                      PrimaryButton(
+                                        title: tr.serviceProvider,
+                                        onPressed: () {
+                                          context.pushReplacementNamed(
+                                            Routes.signUp,
+                                          );
+                                        },
+                                      ),
+                                      Text.rich(
+                                        TextSpan(
+                                          children: [
+                                            TextSpan(
+                                              text: tr.signInAs,
+                                              style: AppTextStyle.textStyle(
+                                                appFontSize: 16.sp,
+                                                appFontWeight: FontWeight.w400,
+                                                color: Color(0xffFFFFFF),
+                                              ),
+                                            ),
+                                            TextSpan(
+                                              recognizer: TapGestureRecognizer()
+                                                ..onTap = () {
+                                                  context
+                                                      .pushNamedAndRemoveUntil(
+                                                        Routes.dashboard,
+                                                      );
+                                                },
+                                              text: tr.guest,
+                                              style: AppTextStyle.textStyle(
+                                                appFontSize: 16.sp,
+                                                appFontWeight: FontWeight.w400,
+                                                color: Color(0xff683131),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  )
+                                : PrimaryButton(
+                                    title: tr.next,
+                                    onPressed: () {
+                                      cubit.nextPage(onBoardings.length);
+                                    },
+                                  ),
+                            GiveSpace(height: 16),
+                            if (index != 3)
+                              SmoothPageIndicator(
+                                controller: cubit.controller, // PageController
+                                count: onBoardings.length - 1,
+                                effect: ExpandingDotsEffect(
+                                  activeDotColor: Color(0xff683131),
+                                  dotColor: Color(0xffF9FAFA),
+                                ), // your preferred effect
+                                onDotClicked: (index) {},
+                              ),
+                            GiveSpace(height: 50),
+                          ],
+                        ),
+                      ),
+                    );
+                  },
                 );
-              },
-            );
               },
             ),
           );

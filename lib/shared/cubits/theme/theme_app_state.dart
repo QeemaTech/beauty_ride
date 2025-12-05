@@ -5,7 +5,7 @@ sealed class ThemeAppState extends Equatable {
   final ThemeData themeData;
 
   @override
-  List<Object> get props => [];
+  List<Object> get props => [themeData.brightness];
 }
 
 final class ThemeAppInitial extends ThemeAppState {

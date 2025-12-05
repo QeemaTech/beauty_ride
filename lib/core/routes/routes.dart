@@ -25,4 +25,8 @@ class Routes {
   static const customerServiceScreen = "/customerServiceScreen";
   static const customServiceScreen = "/customServiceScreen";
   static const searchTruckScreen = "/searchTruckScreen";
+  static const truckingScreen = "/truckingScreen";
+  static const inServiceScreen = "/inServiceScreen";
+  static const myBookingScreen = "/myBookingScreen";
+  static const bookingScreen = "/bookingScreen";
 }

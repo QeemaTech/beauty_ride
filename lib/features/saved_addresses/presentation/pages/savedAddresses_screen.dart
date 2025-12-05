@@ -18,8 +18,6 @@ class SavedaddressesScreen extends StatelessWidget {
     return BlocProvider(
       create: (context) => SavedAddressesCubit(),
       child: Scaffold(
-        backgroundColor: Color(0xFFF5F5F5),
-       
         body: BlocBuilder<SavedAddressesCubit, SavedAddressesState>(
           builder: (context, state) {
             final cubit = context.read<SavedAddressesCubit>();
@@ -57,7 +55,7 @@ class SavedaddressesScreen extends StatelessWidget {
                         ],
                       ),
                       child: PrimaryButton(
-                        title: 'إضافة عنوان جديد',
+                        title: tr.addAddress,
                         onPressed: () {
                           // TODO: Navigate to add address screen
                           _showAddAddressDialog(context, cubit);
@@ -89,7 +87,7 @@ class SavedaddressesScreen extends StatelessWidget {
           ),
           GiveSpace(height: 16),
           Text(
-            'لا توجد عناوين محفوظة',
+            tr.noAddressesSaved,
             style: AppTextStyle.textStyle(
               appFontSize: AppFontSize.textMD,
               appFontWeight: AppFontWeight.medium,
@@ -151,7 +149,7 @@ class SavedaddressesScreen extends StatelessWidget {
                         borderRadius: BorderRadius.circular(4.r),
                       ),
                       child: Text(
-                        'افتراضي',
+                        tr.defaultText,
                         style: AppTextStyle.textStyle(
                           appFontSize: AppFontSize.textXS,
                           appFontWeight: AppFontWeight.medium,
@@ -176,15 +174,15 @@ class SavedaddressesScreen extends StatelessWidget {
                 itemBuilder: (context) => [
                   PopupMenuItem(
                     value: 'setDefault',
-                    child: Text('تعيين كافتراضي'),
+                    child: Text(tr.setAsDefault),
                   ),
                   PopupMenuItem(
                     value: 'edit',
-                    child: Text('تعديل'),
+                    child: Text(tr.edit),
                   ),
                   PopupMenuItem(
                     value: 'delete',
-                    child: Text('حذف', style: TextStyle(color: Colors.red)),
+                    child: Text(tr.delete, style: TextStyle(color: Colors.red)),
                   ),
                 ],
               ),
@@ -206,14 +204,14 @@ class SavedaddressesScreen extends StatelessWidget {
             Row(
               children: [
                 if (address.buildingNumber != null)
-                  _buildDetailChip('مبنى ${address.buildingNumber}'),
+                  _buildDetailChip('${tr.building} ${address.buildingNumber}'),
                 if (address.floor != null) ...[
                   SizedBox(width: 8.w),
-                  _buildDetailChip('طابق ${address.floor}'),
+                  _buildDetailChip('${tr.floor} ${address.floor}'),
                 ],
                 if (address.apartment != null) ...[
                   SizedBox(width: 8.w),
-                  _buildDetailChip('شقة ${address.apartment}'),
+                  _buildDetailChip('${tr.apartment} ${address.apartment}'),
                 ],
               ],
             ),
@@ -264,12 +262,12 @@ class SavedaddressesScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('إضافة عنوان جديد'),
-        content: Text('سيتم إضافة شاشة إضافة عنوان جديدة قريباً'),
+        title: Text(tr.addAddress),
+        content: Text(tr.addAddressScreen),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('موافق'),
+            child: Text(tr.ok),
           ),
         ],
       ),
@@ -285,12 +283,12 @@ class SavedaddressesScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('تعديل العنوان'),
-        content: Text('سيتم إضافة شاشة تعديل العنوان قريباً'),
+        title: Text(tr.editAddress),
+        content: Text(tr.editAddressScreen),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('موافق'),
+            child: Text(tr.ok),
           ),
         ],
       ),
@@ -305,19 +303,19 @@ class SavedaddressesScreen extends StatelessWidget {
     showDialog(
       context: context,
       builder: (context) => AlertDialog(
-        title: Text('حذف العنوان'),
-        content: Text('هل أنت متأكد من حذف هذا العنوان؟'),
+        title: Text(tr.deleteAddress),
+        content: Text(tr.areYouSureDeleteAddress),
         actions: [
           TextButton(
             onPressed: () => Navigator.pop(context),
-            child: Text('إلغاء'),
+            child: Text(tr.cancel),
           ),
           TextButton(
             onPressed: () {
               cubit.deleteAddress(addressId);
               Navigator.pop(context);
             },
-            child: Text('حذف', style: TextStyle(color: Colors.red)),
+            child: Text(tr.delete, style: TextStyle(color: Colors.red)),
           ),
         ],
       ),

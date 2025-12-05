@@ -47,26 +47,26 @@ class CustomAppbar extends StatelessWidget {
               ),
             )
           : null,
-      actions: [
-        if (isActionIcon == true)
-          GestureDetector(
-            onTap: () {
-              context.pushNamedAndRemoveUntil(Routes.homeScreen);
-            },
-            child: Padding(
-              padding: const EdgeInsets.only(right: 26),
-              child: Text(
-                title,
-                style: AppTextStyle.textStyle(
-                  appFontSize: 16.sp,
-                  appFontWeight: FontWeight.w500,
-                  color: Color(0xffDFE4EC),
-                ),
-              ),
-            ),
-          ),
-        // if (isNotification == true) NotificationIcon(),
-      ],
+      // actions: [
+      //   if (isActionIcon == true)
+      //     GestureDetector(
+      //       onTap: () {
+      //         context.pushNamedAndRemoveUntil(Routes.homeScreen);
+      //       },
+      //       child: Padding(
+      //         padding: const EdgeInsets.only(right: 26),
+      //         child: Text(
+      //           title,
+      //           style: AppTextStyle.textStyle(
+      //             appFontSize: 16.sp,
+      //             appFontWeight: FontWeight.w500,
+      //             color: Color(0xffDFE4EC),
+      //           ),
+      //         ),
+      //       ),
+      //     ),
+      //   // if (isNotification == true) NotificationIcon(),
+      // ],
     );
   }
 }

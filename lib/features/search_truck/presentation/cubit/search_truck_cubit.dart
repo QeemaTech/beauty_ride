@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:beauty_ride/shared/resources/images_resources.dart';
 import 'package:bloc/bloc.dart';
 import 'package:beauty_ride/features/search_truck/data/models/service_provider_model.dart';
 import 'package:equatable/equatable.dart';
@@ -25,10 +26,7 @@ class SearchTruckCubit extends Cubit<SearchTruckState> {
     markers.clear();
     cameraPosition = CameraPosition(target: LatLng(lat, lng), zoom: 15.0);
     markers.add(
-      Marker(
-        markerId: const MarkerId("current"),
-        position: LatLng(lat, lng),
-      ),
+      Marker(markerId: const MarkerId("current"), position: LatLng(lat, lng)),
     );
     emit(SearchTruckInitial());
   }
@@ -37,10 +35,7 @@ class SearchTruckCubit extends Cubit<SearchTruckState> {
     // Clear existing markers
     markers.clear();
     // Update camera position
-    cameraPosition = CameraPosition(
-      target: location,
-      zoom: 15.0,
-    );
+    cameraPosition = CameraPosition(target: location, zoom: 15.0);
     // Add selected location marker
     markers.add(
       Marker(
@@ -63,7 +58,7 @@ class SearchTruckCubit extends Cubit<SearchTruckState> {
         id: '1',
         name: 'احمد سالم',
         rating: 5.0,
-        imageUrl: '',
+        imageUrl: ImagesResources.man,
         price: 300.0,
         latitude: location.latitude + 0.001,
         longitude: location.longitude + 0.001,
@@ -72,7 +67,7 @@ class SearchTruckCubit extends Cubit<SearchTruckState> {
         id: '2',
         name: 'محمد علي',
         rating: 4.8,
-        imageUrl: '',
+        imageUrl: ImagesResources.man,
         price: 280.0,
         latitude: location.latitude - 0.001,
         longitude: location.longitude + 0.001,
@@ -81,7 +76,79 @@ class SearchTruckCubit extends Cubit<SearchTruckState> {
         id: '3',
         name: 'سارة أحمد',
         rating: 4.9,
-        imageUrl: '',
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
+        price: 320.0,
+        latitude: location.latitude + 0.001,
+        longitude: location.longitude - 0.001,
+      ),
+      ServiceProviderModel(
+        id: '3',
+        name: 'سارة أحمد',
+        rating: 4.9,
+        imageUrl: ImagesResources.man,
         price: 320.0,
         latitude: location.latitude + 0.001,
         longitude: location.longitude - 0.001,

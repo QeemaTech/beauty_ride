@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 part 'theme_app_state.dart';
 
 class ThemeAppCubit extends Cubit<ThemeAppState> {
-  ThemeAppCubit() : super(DarkTheme());
+  ThemeAppCubit() : super(LightTheme());
 
   Future<void> loadTheme() async {
     final pref = await SharedPreferences.getInstance();
@@ -15,7 +15,7 @@ class ThemeAppCubit extends Cubit<ThemeAppState> {
     emit(isDark ? DarkTheme() : LightTheme());
   }
 
-  Future initTheme() async {
+  Future<void> toggleTheme() async {
     final pref = await SharedPreferences.getInstance();
     if (state is LightTheme) {
       emit(DarkTheme());
@@ -24,5 +24,10 @@ class ThemeAppCubit extends Cubit<ThemeAppState> {
       emit(LightTheme());
       await pref.setBool("isDark", false);
     }
+  }
+
+  // Keep old method name for backward compatibility
+  Future initTheme() async {
+    await toggleTheme();
   }
 }

@@ -65,4 +65,16 @@ class OnBoardingCubit extends Cubit<OnBoardingState> {
       emit(ChangePage(currentIndex));
     }
   }
+
+  void skipToLastPage(int totalPages) {
+    final lastPageIndex = totalPages - 1;
+    currentIndex = lastPageIndex;
+    // controller.animateToPage(
+    //   lastPageIndex,
+    //   duration: Duration(milliseconds: 500),
+    //   curve: Curves.easeInOut,
+    // );
+    controller.jumpToPage(lastPageIndex);
+    emit(ChangePage(currentIndex));
+  }
 }

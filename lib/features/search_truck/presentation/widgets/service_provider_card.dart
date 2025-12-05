@@ -24,7 +24,7 @@ class ServiceProviderCard extends StatelessWidget {
     final tr = S.of(context);
     return Container(
       margin: EdgeInsets.only(bottom: 12.h),
-      padding: EdgeInsets.all(16.w),
+      padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 16.h),
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(16.r),
@@ -41,9 +41,22 @@ class ServiceProviderCard extends StatelessWidget {
         children: [
           Row(
             children: [
-              CircleAvatar(
-                radius: 20.r,
-                child: Image.asset(ImagesResources.man),
+              Container(
+                height: 40.h,
+                width: 40.w,
+                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 3.h),
+                decoration: BoxDecoration(
+                  shape: BoxShape.circle,
+                  border: Border.all(
+                    color: Color(0xff000000).withOpacity(0.10),
+                    width: 1.5.w,
+                  ),
+                ),
+                child: Image.asset(
+                  provider.imageUrl,
+                  width: 34.w,
+                  height: 34.h,
+                ),
               ),
               GiveSpace(height: 9),
               Column(
@@ -53,7 +66,7 @@ class ServiceProviderCard extends StatelessWidget {
                     provider.name,
                     style: AppTextStyle.textStyle(
                       appFontSize: 12.sp,
-                      appFontWeight: FontWeight.w400,
+                      appFontWeight: FontWeight.bold,
                       color: Color(0xff110808),
                     ),
                   ),
@@ -64,8 +77,9 @@ class ServiceProviderCard extends StatelessWidget {
                       Text(
                         provider.rating.toStringAsFixed(1),
                         style: AppTextStyle.textStyle(
-                          appFontSize: 10.sp,
-                          appFontWeight: FontWeight.w400,
+                          cairo: true,
+                          appFontSize: 12.sp,
+                          appFontWeight: FontWeight.bold,
                           color: Color(0xff110808),
                         ),
                       ),
@@ -77,9 +91,69 @@ class ServiceProviderCard extends StatelessWidget {
               Text(
                 '${provider.price.toInt()} ${tr.egp}',
                 style: AppTextStyle.textStyle(
+                  cairo: true,
                   appFontSize: 16.sp,
                   appFontWeight: FontWeight.w400,
                   color: Color(0xff110808),
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              // Reject Button
+              Expanded(
+                child: GestureDetector(
+                  onTap: onAccept,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16.h,
+                      horizontal: 32.w,
+                    ),
+                    decoration: BoxDecoration(
+                      color: Color(0xffE4C6C6),
+                      borderRadius: BorderRadius.circular(50.r),
+                      //border: Border.all(color: Color(0xffC40000), width: 1.w),
+                    ),
+                    child: Center(
+                      child: Text(
+                        tr.accept,
+                        style: AppTextStyle.textStyle(
+                          appFontSize: 18.sp,
+                          appFontWeight: FontWeight.w600,
+                          color: Color(0xff683131),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
+              SizedBox(width: 12.w),
+              // Accept Button
+              Expanded(
+                child: GestureDetector(
+                  onTap: onReject,
+                  child: Container(
+                    padding: EdgeInsets.symmetric(
+                      vertical: 16.h,
+                      horizontal: 32.w,
+                    ),
+                    decoration: BoxDecoration(
+                      //color: Color(0xffE4C6C6),
+                      borderRadius: BorderRadius.circular(50.r),
+                      border: Border.all(color: Color(0xffC40000), width: 1.w),
+                    ),
+                    child: Center(
+                      child: Text(
+                        tr.reject,
+                        style: AppTextStyle.textStyle(
+                          appFontSize: 16.sp,
+                          appFontWeight: FontWeight.w600,
+                          color: Color(0xffC40000),
+                        ),
+                      ),
+                    ),
+                  ),
                 ),
               ),
             ],

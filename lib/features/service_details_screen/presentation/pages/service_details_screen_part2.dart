@@ -95,9 +95,8 @@ class ServiceDetailsScreenPart2 extends StatelessWidget {
     return BlocProvider(
       create: (context) => ServiceDetailsScreenPart2Cubit(),
       child: Scaffold(
-        backgroundColor: Color(0xFFF5F5F5),
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(50.h),
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(50.h),
           child: CustomAppbar(title: tr.serviceDetails),
         ),
         bottomNavigationBar: BottomAppBar(
@@ -110,7 +109,6 @@ class ServiceDetailsScreenPart2 extends StatelessWidget {
                     context: context,
                     builder: (_) {
                       return Container(
-                        height: 250.h,
                         padding: EdgeInsets.symmetric(
                           horizontal: 24.w,
                           vertical: 24.h,
@@ -163,48 +161,73 @@ class ServiceDetailsScreenPart2 extends StatelessWidget {
                             Row(
                               mainAxisAlignment: .spaceAround,
                               children: [
-                                Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      IconsResources.calendar,
-                                      width: 20.w,
-                                      height: 20.h,
-                                    ),
-                                    GiveSpace(width: 8),
-                                    Text(
-                                      tr.date,
-                                      style: AppTextStyle.textStyle(
-                                        appFontSize: 18.sp,
-                                        appFontWeight: FontWeight.w400,
-                                        appFontHeight: 22.sp,
-                                        color: Color(0xff000000),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 17.w,
+                                    vertical: 17.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(17.r),
+                                    color: Color(0xffF5F6F6),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        IconsResources.calendar,
+                                        width: 20.w,
+                                        height: 20.h,
                                       ),
-                                    ),
-                                  ],
+                                      GiveSpace(width: 8),
+                                      Text(
+                                        tr.date,
+                                        style: AppTextStyle.textStyle(
+                                          appFontSize: 18.sp,
+                                          appFontWeight: FontWeight.w400,
+                                          appFontHeight: 22.sp,
+                                          color: Color(0xff000000),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
-                                Row(
-                                  children: [
-                                    SvgPicture.asset(
-                                      IconsResources.clock,
-                                      width: 20.w,
-                                      height: 20.h,
-                                    ),
-                                    GiveSpace(width: 8),
-                                    Text(
-                                      tr.time,
-                                      style: AppTextStyle.textStyle(
-                                        appFontSize: 18.sp,
-                                        appFontWeight: FontWeight.w400,
-                                        appFontHeight: 22.sp,
-                                        color: Color(0xff000000),
+                                Container(
+                                  padding: EdgeInsets.symmetric(
+                                    horizontal: 17.w,
+                                    vertical: 17.h,
+                                  ),
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(17.r),
+                                    color: Color(0xffF5F6F6),
+                                  ),
+                                  child: Row(
+                                    children: [
+                                      SvgPicture.asset(
+                                        IconsResources.clock,
+                                        width: 20.w,
+                                        height: 20.h,
                                       ),
-                                    ),
-                                  ],
+                                      GiveSpace(width: 8),
+                                      Text(
+                                        tr.time,
+                                        style: AppTextStyle.textStyle(
+                                          appFontSize: 18.sp,
+                                          appFontWeight: FontWeight.w400,
+                                          appFontHeight: 22.sp,
+                                          color: Color(0xff000000),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
                                 ),
                               ],
                             ),
                             GiveSpace(height: 16),
-                            PrimaryButton(title: tr.book),
+                            PrimaryButton(
+                              title: tr.book,
+                              onPressed: () {
+                                context.pushNamed(Routes.bookingScreen);
+                              },
+                            ),
                           ],
                         ),
                       );
